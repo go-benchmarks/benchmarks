@@ -9,6 +9,8 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
+	"strings"
 )
 
 var runCmd = &cobra.Command{
@@ -38,7 +40,17 @@ var runCmd = &cobra.Command{
 func runBenchmark(logger *slog.Logger, path string) error {
 	logger.Debug("running benchmark", "path", path)
 
-	cmd := exec.Command("go", "test", "-bench", ".", "-benchmem")
+	maxCPU := runtime.NumCPU()
+	logger.Debug("max cpu", "maxCPU", maxCPU)
+
+	var cpuTests []string
+	for i := 1; i <= maxCPU; i *= 2 {
+		cpuTests = append(cpuTests, fmt.Sprint(i))
+	}
+
+	logger.Debug("cpu tests", "cpuTests", cpuTests)
+
+	cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-cpu", strings.Join(cpuTests, ","))
 	cmd.Dir = path
 	output, err := cmd.CombinedOutput()
 	if err != nil {

@@ -2,11 +2,41 @@ goos: windows
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/string-concatination
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSimpleAppend_write-32     	 1000000	     67875 ns/op	  503993 B/op	       1 allocs/op
-BenchmarkSimpleAppend_read-32      	1000000000	         0.2799 ns/op	       0 B/op	       0 allocs/op
-BenchmarkBuffer_write-32           	258424921	         4.543 ns/op	       2 B/op	       0 allocs/op
-BenchmarkBuffer_read-32            	  574425	      2029 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkStringBuilder_write-32    	481151876	         2.360 ns/op	       6 B/op	       0 allocs/op
-BenchmarkStringBuilder_read-32     	1000000000	         0.5599 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write        	 1000000	     47033 ns/op	  503992 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write-2      	 1000000	     37876 ns/op	  503992 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-4      	 1000000	     60751 ns/op	  503993 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-8      	  944368	     68492 ns/op	  476178 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-16     	 1000000	     67076 ns/op	  503994 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-32     	 1000000	     68501 ns/op	  503993 B/op	       1 allocs/op
+BenchmarkSimpleAppend_read         	1000000000	         0.2759 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-2       	1000000000	         0.2745 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-4       	1000000000	         0.2769 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-8       	1000000000	         0.2730 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-16      	1000000000	         0.2725 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-32      	1000000000	         0.2752 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuffer_write              	250352736	         4.646 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_write-2            	280024194	         7.995 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_write-4            	283924009	         4.372 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_write-8            	275227968	         4.588 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_write-16           	276747150	         4.564 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_write-32           	277089286	         4.426 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_read               	 1000000	      1100 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-2             	  919807	      1415 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-4             	  900745	      1578 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-8             	  625990	      1893 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-16            	  624105	      1879 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-32            	  507675	      2127 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkStringBuilder_write       	419337613	         6.544 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-2     	724236201	         2.879 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-4     	720163807	         1.886 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-8     	721854877	         1.880 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-16    	704897155	         1.849 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-32    	690498055	         1.697 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_read        	1000000000	         0.5551 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-2      	1000000000	         0.5473 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-4      	1000000000	         0.5453 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-8      	1000000000	         0.5608 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-16     	1000000000	         0.5537 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-32     	1000000000	         0.5571 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	74.003s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	382.752s
