@@ -2,161 +2,41 @@ goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/counter
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkAtomicPointerCounter_increment       	   10000	         4.743 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-2     	   10000	         5.148 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-4     	   10000	         6.242 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-8     	   10000	         4.750 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-16    	   10000	         4.725 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-32    	   10000	         4.733 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get             	   10000	         0.2810 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-2           	   10000	         0.2870 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-4           	   10000	         0.2880 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-8           	   10000	         0.2960 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-16          	   10000	         0.2880 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-32          	   10000	         0.2880 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment          	   10000	         4.722 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-2        	   10000	         4.737 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-4        	   10000	         4.738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-8        	   10000	         4.801 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-16       	   10000	         4.745 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-32       	   10000	         4.733 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get                	   10000	         0.2790 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-2              	   10000	         0.2950 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-4              	   10000	         0.4400 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-8              	   10000	         0.2920 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-16             	   10000	         0.2870 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-32             	   10000	         0.2900 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment                 	   10000	         0.2810 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-2               	   10000	         0.2880 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-4               	   10000	         0.2890 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-8               	   10000	         0.2970 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-16              	   10000	         0.2860 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-32              	   10000	         0.2880 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get                       	   10000	         0.2800 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-2                     	   10000	         0.2870 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-4                     	   10000	         0.2920 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-8                     	   10000	         0.2960 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-16                    	   10000	         0.2980 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-32                    	   10000	         0.5080 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment        	   10000	        16.12 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-2      	   10000	        16.13 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-4      	   10000	        16.15 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-8      	   10000	        16.16 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-16     	   10000	        16.08 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-32     	   10000	        16.15 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get              	   10000	        15.53 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-2            	   10000	        18.88 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-4            	   10000	        15.57 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-8            	   10000	        21.71 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-16           	   10000	        15.57 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-32           	   10000	        15.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_increment 	   10000	         4.710 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_get       	   10000	         0.2810 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_increment    	   10000	         4.721 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_get          	   10000	         0.2800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_increment           	   10000	         0.2800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_get                 	   10000	         0.2810 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_increment  	   10000	        16.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_get        	   10000	        15.53 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	0.056s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	0.005s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/counter
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkAtomicPointerCounter_increment       	   50000	         4.706 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-2     	   50000	         4.708 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-4     	   50000	         4.717 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-8     	   50000	         4.884 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-16    	   50000	         4.707 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-32    	   50000	         4.710 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get             	   50000	         0.4066 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-2           	   50000	         0.2746 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-4           	   50000	         0.2742 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-8           	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-16          	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-32          	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment          	   50000	         4.718 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-2        	   50000	         4.982 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-4        	   50000	         4.713 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-8        	   50000	         4.721 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-16       	   50000	         4.720 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-32       	   50000	         4.723 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get                	   50000	         0.2730 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-2              	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-4              	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-8              	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-16             	   50000	         0.2740 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-32             	   50000	         0.2752 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment                 	   50000	         0.2724 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-2               	   50000	         0.2748 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-4               	   50000	         0.2740 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-8               	   50000	         0.2752 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-16              	   50000	         0.2740 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-32              	   50000	         0.2758 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get                       	   50000	         0.2728 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-2                     	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-4                     	   50000	         0.2764 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-8                     	   50000	         0.2738 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-16                    	   50000	         0.2754 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-32                    	   50000	         0.2736 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment        	   50000	        16.58 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-2      	   50000	        16.11 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-4      	   50000	        16.60 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-8      	   50000	        18.39 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-16     	   50000	        16.09 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-32     	   50000	        16.12 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get              	   50000	        15.52 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-2            	   50000	        16.61 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-4            	   50000	        15.79 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-8            	   50000	        15.52 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-16           	   50000	        15.52 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-32           	   50000	        15.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_increment 	   50000	         4.706 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_get       	   50000	         0.2724 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_increment    	   50000	         4.718 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_get          	   50000	         0.2724 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_increment           	   50000	         0.2722 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_get                 	   50000	         0.2722 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_increment  	   50000	        16.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_get        	   50000	        15.52 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	0.063s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	0.007s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/counter
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkAtomicPointerCounter_increment       	  100000	         5.578 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-2     	  100000	         4.976 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-4     	  100000	         4.703 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-8     	  100000	         4.706 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-16    	  100000	         4.706 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_increment-32    	  100000	         5.626 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get             	  100000	         0.2717 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-2           	  100000	         0.2725 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-4           	  100000	         0.2723 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-8           	  100000	         0.4433 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-16          	  100000	         0.2722 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicPointerCounter_get-32          	  100000	         0.2726 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment          	  100000	         4.718 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-2        	  100000	         4.813 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-4        	  100000	         4.720 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-8        	  100000	         4.718 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-16       	  100000	         4.720 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_increment-32       	  100000	         4.718 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get                	  100000	         0.2718 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-2              	  100000	         0.3274 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-4              	  100000	         0.2723 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-8              	  100000	         0.2731 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-16             	  100000	         0.2721 ns/op	       0 B/op	       0 allocs/op
-BenchmarkAtomicUintCounter_get-32             	  100000	         0.2937 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment                 	  100000	         0.2720 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-2               	  100000	         0.2726 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-4               	  100000	         0.2725 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-8               	  100000	         0.2722 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-16              	  100000	         0.3995 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_increment-32              	  100000	         0.2719 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get                       	  100000	         0.2716 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-2                     	  100000	         0.2719 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-4                     	  100000	         0.2721 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-8                     	  100000	         0.2729 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-16                    	  100000	         0.2725 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounter_get-32                    	  100000	         0.2726 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment        	  100000	        20.35 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-2      	  100000	        16.26 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-4      	  100000	        16.11 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-8      	  100000	        16.11 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-16     	  100000	        16.93 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_increment-32     	  100000	        16.11 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get              	  100000	        15.85 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-2            	  100000	        15.93 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-4            	  100000	        16.11 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-8            	  100000	        18.81 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-16           	  100000	        15.47 ns/op	       0 B/op	       0 allocs/op
-BenchmarkIntCounterWithMutex_get-32           	  100000	        15.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_increment 	  100000	         5.175 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_get       	  100000	         0.2714 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_increment    	  100000	         5.548 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_get          	  100000	         0.2715 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_increment           	  100000	         0.2713 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_get                 	  100000	         0.2714 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_increment  	  100000	        16.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_get        	  100000	        15.83 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	0.080s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	0.009s

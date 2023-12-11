@@ -6,8 +6,10 @@ import (
 )
 
 func BenchmarkStringBuilder_write(b *testing.B) {
+	var s strings.Builder
+	b.ResetTimer()
+
 	for i := 0; i < b.N; i++ {
-		var s strings.Builder
 		s.WriteString("a")
 	}
 }

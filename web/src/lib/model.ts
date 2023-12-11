@@ -33,6 +33,10 @@ export function getBenchmarkGroups(): BenchmarkGroups {
     return j
 }
 
+export function convertBenchmarksTo() {
+
+}
+
 export function convertBenchmarksToLineChartData(benchmarks: Benchmark[]) {
 // Prepare an array to hold datasets for each Benchmark
     let datasets: {
@@ -43,6 +47,14 @@ export function convertBenchmarksToLineChartData(benchmarks: Benchmark[]) {
         tension: number;
     }[] = [];
     let cpuCounts = new Set<number>();
+
+    // Only keep variations that have the highest N in each benchmark
+    // For example: If there are 8 variations for a benchmark with N=1, N=2, N=4, N=8, N=16, N=32, N=64, N=128
+    // We only want to keep all variations with N=128
+    benchmarks.forEach(benchmark => {
+        const maxN = Math.max(...benchmark.Variations.map(variation => variation.N));
+        benchmark.Variations = benchmark.Variations.filter(variation => variation.N === maxN);
+    });
 
     benchmarks.forEach(benchmark => {
         benchmark.Variations.forEach(variation => {
@@ -128,6 +140,14 @@ export function getLineChartOptions() {
 }
 
 export function getBarChartData(benchmarks: Benchmark[]) {
+    // Only keep variations that have the highest N in each benchmark
+    // For example: If there are 8 variations for a benchmark with N=1, N=2, N=4, N=8, N=16, N=32, N=64, N=128
+    // We only want to keep all variations with N=128
+    benchmarks.forEach(benchmark => {
+        const maxN = Math.max(...benchmark.Variations.map(variation => variation.N));
+        benchmark.Variations = benchmark.Variations.filter(variation => variation.N === maxN);
+    });
+
     // First, we need to create a unique list of all CPU counts across all variations
     const cpuCounts = benchmarks
         .flatMap(benchmark => benchmark.Variations)

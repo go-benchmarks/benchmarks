@@ -5,8 +5,10 @@ import (
 )
 
 func BenchmarkSimpleAppend_write(b *testing.B) {
+	var s string
+	b.ResetTimer()
+
 	for i := 0; i < b.N; i++ {
-		var s string
 		s = s + "a"
 	}
 }

@@ -49,6 +49,8 @@ func runBenchmark(logger *slog.Logger, path string) error {
 		cpuTests = append(cpuTests, fmt.Sprint(i))
 	}
 
+	cpuTests = []string{"1"}
+
 	logger.Debug("cpu tests", "cpuTests", cpuTests)
 
 	benchtimes := []string{"10000x", "50000x", "100000x"}
