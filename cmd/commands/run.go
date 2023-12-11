@@ -50,7 +50,7 @@ func runBenchmark(logger *slog.Logger, path string) error {
 	}
 
 	// ony keep first, second and last cpu test
-	cpuTests = append(cpuTests[:2], cpuTests[len(cpuTests)-1:]...)
+	//cpuTests = append(cpuTests[:2], cpuTests[len(cpuTests)-1:]...)
 
 	logger.Debug("cpu tests", "cpuTests", cpuTests)
 
@@ -60,7 +60,7 @@ func runBenchmark(logger *slog.Logger, path string) error {
 		cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-benchtime", benchtime, "-cpu", strings.Join(cpuTests, ","))
 		logger.Debug("executing benchmark command", "command", cmd.String(), "path", path)
 		cmd.Dir = path
-		result, err := cmd.CombinedOutput()
+		result, err := cmd.Output()
 		if err != nil {
 			logger.Error("failed to run benchmark", "path", path, "output", string(output))
 			return fmt.Errorf("failed to run benchmark: %w", err)

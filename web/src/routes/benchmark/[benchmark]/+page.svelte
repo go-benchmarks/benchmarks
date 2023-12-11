@@ -2,9 +2,9 @@
     import type {PageData} from './$types';
     import {page} from '$app/stores';
     import {
-        type Benchmark,
+        type Benchmark, type BenchmarkGroup,
         convertBenchmarksToLineChartData,
-        getBarChartDataByCPUCount,
+        getBarChartDataByCPUCount, getBarChartDataByRuns,
         getBarChartDataByVariation,
         getBarChartDataByVariationAndRunCount,
         getBenchmarkGroups,
@@ -17,9 +17,7 @@
     export let data: PageData;
 
     const benchmarkSlug = $page.params.benchmark;
-
-    const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name === benchmarkSlug)[0]
-
+    const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name === benchmarkSlug)[0];
     $pageTitle = benchmarkGroup.Name;
 
     let benchmarks: Benchmark[] = benchmarkGroup.Benchmarks;
@@ -34,6 +32,8 @@
         <p>This site compares the performance of <code>{benchmarkGroup.Name}</code> implementations with the
             functions: {@html uniqueVariationNamesString}</p>
     </hgroup>
+    <Bar height="{50}" options="{getLineChartOptions()}" data="{getBarChartDataByRuns(benchmarks)}"/>
+    <Bar height="{50}" options="{getLineChartOptions()}" data="{getBarChartDataByCPUCount(benchmarks)}"/>
 
     <hgroup>
         <h3>Different Run Count</h3>

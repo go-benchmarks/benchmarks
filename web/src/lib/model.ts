@@ -1,4 +1,4 @@
-import j from "../../../benchmarks.json"
+import j from "$lib/benchmarks.json"
 
 export type BenchmarkGroups = BenchmarkGroup[]
 
@@ -33,12 +33,11 @@ export function getBenchmarkGroups(): BenchmarkGroups {
     return j
 }
 
-export function convertBenchmarksTo() {
-
-}
-
 export function convertBenchmarksToLineChartData(benchmarks: Benchmark[]) {
-// Prepare an array to hold datasets for each Benchmark
+    // Make copy of benchmarks
+    benchmarks = JSON.parse(JSON.stringify(benchmarks));
+
+    // Prepare an array to hold datasets for each Benchmark
     let datasets: {
         label: string;
         data: { x: number; y: number; }[];
@@ -62,10 +61,10 @@ export function convertBenchmarksToLineChartData(benchmarks: Benchmark[]) {
             cpuCounts.add(variation.CPUCount);
 
             // Find or create the dataset for this Benchmark and Variation combination
-            let dataset = datasets.find(d => d.label === `${benchmark.Name} | ${variation.Name}`);
+            let dataset = datasets.find(d => d.label === `${variation.Name}`);
             if (!dataset) {
                 dataset = {
-                    label: `${benchmark.Name} | ${variation.Name}`,
+                    label: `${variation.Name}`,
                     data: [],
                     fill: false,
                     borderColor: getRandomColor(), // Function to generate random colors
@@ -140,6 +139,9 @@ export function getLineChartOptions() {
 }
 
 export function getBarChartDataByCPUCount(benchmarks: Benchmark[]) {
+    // Make copy of benchmarks
+    benchmarks = JSON.parse(JSON.stringify(benchmarks));
+
     // First, we need to create a unique list of all CPU counts across all variations
     const cpuCounts = benchmarks
         .flatMap(benchmark => benchmark.Variations)
@@ -155,7 +157,7 @@ export function getBarChartDataByCPUCount(benchmarks: Benchmark[]) {
     // Initialize datasets, one for each CPU count
     const datasets = cpuCounts.map(cpuCount => {
         return {
-            label: `CPU ${cpuCount}`,
+            label: `${cpuCount} CPU Cores`,
             data: new Array(labels.length).fill(null), // Initialize with null which will be replaced with actual data
             backgroundColor: getRandomColor(), // Function to generate a color for each CPU count stack
         };
@@ -167,7 +169,7 @@ export function getBarChartDataByCPUCount(benchmarks: Benchmark[]) {
             // Find the index of the label corresponding to this variation
             const labelIndex = labels.indexOf(`${benchmark.Name} | ${variation.Name}`);
             // Find the dataset corresponding to this CPU count
-            const dataset = datasets.find(d => d.label === `CPU ${variation.CPUCount}`);
+            const dataset = datasets.find(d => d.label === `${variation.CPUCount} CPU Cores`);
             if (dataset) {
                 // Replace the null with the actual NsPerOp value for the corresponding CPU count and variation
                 dataset.data[labelIndex] = variation.OpsPerSec;
@@ -182,14 +184,10 @@ export function getBarChartDataByCPUCount(benchmarks: Benchmark[]) {
 }
 
 export function getBarChartDataByRuns(benchmarks: Benchmark[]) {
-    // First, we need to create a unique list of all CPU counts across all variations
-    // const cpuCounts = benchmarks
-    //     .flatMap(benchmark => benchmark.Variations)
-    //     .map(variation => variation.CPUCount)
-    //     .filter((value, index, self) => self.indexOf(value) === index)
-    //     .sort((a, b) => a - b); // Sort the CPU counts for consistent ordering
+    // Make copy of benchmarks
+    benchmarks = JSON.parse(JSON.stringify(benchmarks));
 
-    // Get a unique list of N values across all variations
+    // Get a list of N values across all variations
     const ns = benchmarks
         .flatMap(benchmark => benchmark.Variations)
         .map(variation => variation.N)
@@ -231,6 +229,9 @@ export function getBarChartDataByRuns(benchmarks: Benchmark[]) {
 }
 
 export function getBarChartDataByVariation(benchmarks: Benchmark[], variationName: string) {
+    // Make copy of benchmarks
+    benchmarks = JSON.parse(JSON.stringify(benchmarks));
+
     // Filter out benchmarks that have the specified variation name
     const filteredBenchmarks = benchmarks.map(benchmark => ({
         ...benchmark,
@@ -251,7 +252,7 @@ export function getBarChartDataByVariation(benchmarks: Benchmark[], variationNam
             return variation ? variation.OpsPerSec : null;
         });
         return {
-            label: `CPU ${cpuCount}`,
+            label: `${cpuCount} CPU Cores`,
             data: data,
             backgroundColor: getRandomColor(), // Function to generate a color for each CPU count stack
         };
@@ -267,6 +268,9 @@ export function getBarChartDataByVariation(benchmarks: Benchmark[], variationNam
 }
 
 export function getBarChartDataByVariationAndRunCount(benchmarks: Benchmark[], variationName: string) {
+    // Make copy of benchmarks
+    benchmarks = JSON.parse(JSON.stringify(benchmarks));
+
     // Filter out benchmarks that have the specified variation name
     const filteredBenchmarks = benchmarks.map(benchmark => ({
         ...benchmark,

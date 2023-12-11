@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func BenchmarkSimpleAppendToSliceAndJoin_write(b *testing.B) {
+func BenchmarkAppendToSliceAndJoin_write(b *testing.B) {
 	var s []string
 	b.ResetTimer()
 
@@ -14,7 +14,7 @@ func BenchmarkSimpleAppendToSliceAndJoin_write(b *testing.B) {
 	}
 }
 
-func BenchmarkSimpleAppendToSliceAndJoin_read(b *testing.B) {
+func BenchmarkAppendToSliceAndJoin_read(b *testing.B) {
 	var s []string
 	for i := 0; i < readCount; i++ {
 		s = append(s, "a")

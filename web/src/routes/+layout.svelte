@@ -1,6 +1,5 @@
 <script>
   import NavBar from "$lib/components/NavBar.svelte";
-  import {pageTitle} from "$lib/store";
 </script>
 
 <svelte:head>
@@ -9,14 +8,7 @@
 
 <NavBar/>
 <main class="container">
-    <header>
-        <hgroup>
-            <h1>Go {$pageTitle} Benchmark</h1>
-            <p><a href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/{$pageTitle}">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/{$pageTitle}</a></p>
-        </hgroup>
-    </header>
-    <br/>
-        <slot></slot>
+    <slot></slot>
 </main>
 
 <style>
