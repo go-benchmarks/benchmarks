@@ -2,41 +2,119 @@ goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/string-concatination
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSimpleAppendToSliceAndJoin_write 	   10000	         6.780 ns/op	      68 B/op	       0 allocs/op
-BenchmarkSimpleAppendToSliceAndJoin_read  	   10000	     66541 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkSimpleAppend_write               	   10000	       570.0 ns/op	    5316 B/op	       0 allocs/op
-BenchmarkSimpleAppend_read                	   10000	         0.2990 ns/op	       0 B/op	       0 allocs/op
-BenchmarkBuffer_write                     	   10000	         5.129 ns/op	       3 B/op	       0 allocs/op
-BenchmarkBuffer_read                      	   10000	       838.4 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkStringBuilder_write              	   10000	         3.116 ns/op	       4 B/op	       0 allocs/op
-BenchmarkStringBuilder_read               	   10000	         0.8810 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write       	     100	        42.90 ns/op	      40 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-2     	     100	        61.70 ns/op	      40 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-32    	     100	        46.50 ns/op	      40 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read        	     100	     64298 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-2      	     100	     70550 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-32     	     100	     73158 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write                     	     100	        83.40 ns/op	      56 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write-2                   	     100	        97.59 ns/op	      56 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write-32                  	     100	        81.00 ns/op	      56 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read                      	     100	         2.600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-2                    	     100	         2.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-32                   	     100	         2.800 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuffer_write                           	     100	        16.90 ns/op	       1 B/op	       0 allocs/op
+BenchmarkBuffer_write-2                         	     100	        18.30 ns/op	       1 B/op	       0 allocs/op
+BenchmarkBuffer_write-32                        	     100	        25.70 ns/op	       1 B/op	       0 allocs/op
+BenchmarkBuffer_read                            	     100	      2161 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-2                          	     100	       438.7 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-32                         	     100	       907.7 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkStringBuilder_write                    	     100	        14.09 ns/op	       2 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-2                  	     100	        18.70 ns/op	       2 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-32                 	     100	        23.39 ns/op	       2 B/op	       0 allocs/op
+BenchmarkStringBuilder_read                     	     100	         1.500 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-2                   	     100	         2.000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-32                  	     100	         2.200 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	0.697s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	0.105s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/string-concatination
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSimpleAppendToSliceAndJoin_write 	   50000	        20.66 ns/op	      87 B/op	       0 allocs/op
-BenchmarkSimpleAppendToSliceAndJoin_read  	   50000	     67274 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkSimpleAppend_write               	   50000	      2023 ns/op	   27047 B/op	       0 allocs/op
-BenchmarkSimpleAppend_read                	   50000	         0.2730 ns/op	       0 B/op	       0 allocs/op
-BenchmarkBuffer_write                     	   50000	         5.166 ns/op	       2 B/op	       0 allocs/op
-BenchmarkBuffer_read                      	   50000	       732.9 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkStringBuilder_write              	   50000	         1.412 ns/op	       4 B/op	       0 allocs/op
-BenchmarkStringBuilder_read               	   50000	         0.5424 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write       	   10000	         8.396 ns/op	      68 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-2     	   10000	        10.48 ns/op	      68 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-32    	   10000	        18.06 ns/op	      68 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read        	   10000	     68972 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-2      	   10000	     68185 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-32     	   10000	     68635 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write                     	   10000	       525.0 ns/op	    5316 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write-2                   	   10000	      1017 ns/op	    5316 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-32                  	   10000	       834.6 ns/op	    5316 B/op	       1 allocs/op
+BenchmarkSimpleAppend_read                      	   10000	         0.2960 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-2                    	   10000	         0.2980 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-32                   	   10000	         0.3030 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuffer_write                           	   10000	         9.140 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_write-2                         	   10000	         6.441 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_write-32                        	   10000	         7.499 ns/op	       3 B/op	       0 allocs/op
+BenchmarkBuffer_read                            	   10000	       957.2 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-2                          	   10000	      1667 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-32                         	   10000	      1438 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkStringBuilder_write                    	   10000	         2.103 ns/op	       4 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-2                  	   10000	         1.995 ns/op	       4 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-32                 	   10000	         2.136 ns/op	       4 B/op	       0 allocs/op
+BenchmarkStringBuilder_read                     	   10000	         0.5510 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-2                   	   10000	         0.5580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-32                  	   10000	         0.5600 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	3.520s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	2.208s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/string-concatination
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSimpleAppendToSliceAndJoin_write 	  100000	        25.91 ns/op	      89 B/op	       0 allocs/op
-BenchmarkSimpleAppendToSliceAndJoin_read  	  100000	     68193 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkSimpleAppend_write               	  100000	      3981 ns/op	   53095 B/op	       0 allocs/op
-BenchmarkSimpleAppend_read                	  100000	         0.2727 ns/op	       0 B/op	       0 allocs/op
-BenchmarkBuffer_write                     	  100000	         4.161 ns/op	       2 B/op	       0 allocs/op
-BenchmarkBuffer_read                      	  100000	       728.7 ns/op	   10240 B/op	       1 allocs/op
-BenchmarkStringBuilder_write              	  100000	         1.578 ns/op	       5 B/op	       0 allocs/op
-BenchmarkStringBuilder_read               	  100000	         0.5414 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write       	   50000	        21.04 ns/op	      87 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-2     	   50000	        30.51 ns/op	      87 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-32    	   50000	        33.54 ns/op	      87 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read        	   50000	     69797 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-2      	   50000	     67914 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-32     	   50000	     68045 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write                     	   50000	      2521 ns/op	   27047 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write-2                   	   50000	      4340 ns/op	   27047 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-32                  	   50000	      4011 ns/op	   27047 B/op	       1 allocs/op
+BenchmarkSimpleAppend_read                      	   50000	         0.2752 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-2                    	   50000	         0.2788 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-32                   	   50000	         0.2772 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuffer_write                           	   50000	         4.198 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_write-2                         	   50000	         5.333 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_write-32                        	   50000	         4.482 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_read                            	   50000	      1716 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-2                          	   50000	      1630 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-32                         	   50000	      1540 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkStringBuilder_write                    	   50000	         1.415 ns/op	       4 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-2                  	   50000	         2.069 ns/op	       4 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-32                 	   50000	         2.379 ns/op	       4 B/op	       0 allocs/op
+BenchmarkStringBuilder_read                     	   50000	         0.5436 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-2                   	   50000	         0.5450 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-32                  	   50000	         0.5454 ns/op	       0 B/op	       0 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	7.312s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	11.167s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/string-concatination
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkSimpleAppendToSliceAndJoin_write       	  100000	        41.34 ns/op	      89 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-2     	  100000	        46.26 ns/op	      89 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_write-32    	  100000	        48.81 ns/op	      89 B/op	       0 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read        	  100000	     65821 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-2      	  100000	     67916 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppendToSliceAndJoin_read-32     	  100000	     67558 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write                     	  100000	      4567 ns/op	   53095 B/op	       0 allocs/op
+BenchmarkSimpleAppend_write-2                   	  100000	      8256 ns/op	   53095 B/op	       1 allocs/op
+BenchmarkSimpleAppend_write-32                  	  100000	      8852 ns/op	   53096 B/op	       1 allocs/op
+BenchmarkSimpleAppend_read                      	  100000	         0.2739 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-2                    	  100000	         0.2727 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSimpleAppend_read-32                   	  100000	         0.2734 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuffer_write                           	  100000	         4.196 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_write-2                         	  100000	         4.447 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_write-32                        	  100000	         4.267 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_read                            	  100000	      1185 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-2                          	  100000	      2061 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkBuffer_read-32                         	  100000	      1666 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkStringBuilder_write                    	  100000	         1.579 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-2                  	  100000	         2.058 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_write-32                 	  100000	         2.696 ns/op	       5 B/op	       0 allocs/op
+BenchmarkStringBuilder_read                     	  100000	         0.5420 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-2                   	  100000	         0.5423 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-32                  	  100000	         0.5825 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	22.901s

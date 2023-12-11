@@ -49,11 +49,12 @@ func runBenchmark(logger *slog.Logger, path string) error {
 		cpuTests = append(cpuTests, fmt.Sprint(i))
 	}
 
-	cpuTests = []string{"1"}
+	// ony keep first, second and last cpu test
+	cpuTests = append(cpuTests[:2], cpuTests[len(cpuTests)-1:]...)
 
 	logger.Debug("cpu tests", "cpuTests", cpuTests)
 
-	benchtimes := []string{"10000x", "50000x", "100000x"}
+	benchtimes := []string{"100x", "10000x", "50000x", "100000x"}
 	var output []byte
 	for _, benchtime := range benchtimes {
 		cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-benchtime", benchtime, "-cpu", strings.Join(cpuTests, ","))
