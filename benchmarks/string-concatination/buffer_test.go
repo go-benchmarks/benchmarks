@@ -6,10 +6,8 @@ import (
 )
 
 func BenchmarkBuffer_write(b *testing.B) {
-	var buf bytes.Buffer
-	b.ResetTimer()
-
 	for i := 0; i < b.N; i++ {
+		var buf bytes.Buffer
 		buf.WriteString("a")
 	}
 }

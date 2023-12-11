@@ -32,7 +32,6 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 		logger.Debug("walking through benchmarks", "currentPath", path)
 
 		var benchmarkGroup BenchmarkGroup
-		var set parse.Set
 
 		benchmarkGroup.Name = filepath.Base(path)
 
@@ -41,55 +40,73 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 			return fmt.Errorf("failed to open benchmarkGroup file: %w", err)
 		}
 
-		set, err = parse.ParseSet(f)
+		set, err := parse.ParseSet(f)
 		if err != nil {
 			return fmt.Errorf("failed to parse benchmarkGroup file: %w", err)
 		}
 
-		var results []Benchmark
+		var variations []Variation
 		for s, i := range set {
-			logger.Debug("adding benchmarkGroup", "name", s)
-
 			for _, b := range i {
-				br := Benchmark{
+				logger.Debug("adding variation", "name", s)
+				variation := Variation{
 					Benchmark: *b,
-					Variation: s,
 				}
 
-				brNameParts := strings.Split(br.Name, "_")
-				br.Name = brNameParts[0]
+				brNameParts := strings.Split(variation.Benchmark.Name, "_") // "BenchmarkName_VariationName" -> ["BenchmarkName", "VariationName"]
+				logger.Debug("benchmark name parts", "parts", brNameParts)
+				variation.Benchmark.Name = brNameParts[0] // Benchmark name is the first part.
+
+				// If there are more parts, then the variation name is the second part.
 				if len(brNameParts) > 1 {
-					br.Variation = strings.Join(brNameParts[1:], " ")
-					br.Variation = strings.ReplaceAll(br.Variation, "_", " ")
-					br.Variation = strings.ReplaceAll(br.Variation, "-", " ")
+					variation.Name = brNameParts[1]
+					variation.Name = strings.ReplaceAll(variation.Name, "_", " ")
+					variation.Name = strings.ReplaceAll(variation.Name, "-", " ")
 
 					// Variation parts.
-					brVariationParts := strings.Split(br.Variation, " ")
-					br.Variation = strings.Join(brVariationParts[:len(brVariationParts)-1], " ")
+					brVariationParts := strings.Split(variation.Name, " ")
+					logger.Debug("benchmark variation name parts", "parts", brVariationParts)
+					variation.Name = strings.Join(brVariationParts[:len(brVariationParts)-1], " ")
+
+					logger.Warn("variation name", "name", variation.Name)
 
 					// The last part is the CPU count, if it exists.
-					br.CPUCount, err = strconv.Atoi(brVariationParts[len(brVariationParts)-1])
+					variation.CPUCount, err = strconv.Atoi(brVariationParts[len(brVariationParts)-1])
 					if err != nil {
-						br.CPUCount = 1
+						variation.CPUCount = 1
+						variation.Name = strings.Join(brVariationParts, " ")
 					}
-
 				}
 
 				// Split name. "BenchmarkName" -> "BenchmarkGroup Name". Split happens at every uppercase letter.
-				br.Name = strings.Join(utils.SplitCamelCase(br.Name)[2:], " ")
+				variation.Benchmark.Name = strings.Join(utils.SplitCamelCase(variation.Benchmark.Name)[2:], " ")
+				logger.Debug("adding benchmark variation", "benchmark name", variation.Benchmark.Name, "variation name", variation.Name, "cpuCount", variation.CPUCount, "orig name", s)
 
-				logger.Debug("adding benchmarkGroup", "name", br.Name, "variation", br.Variation, "cpuCount", br.CPUCount)
+				// Calculate ops per second by dividing ns/op by 1e9.
+				variation.OpsPerSec = 1e9 / variation.NsPerOp
 
-				results = append(results, br)
+				variations = append(variations, variation)
 			}
 		}
 
-		// sort results by name and variation
-		sort.Slice(results, func(i, j int) bool {
-			if results[i].Name == results[j].Name {
-				return results[i].Variation < results[j].Variation
-			}
+		logger.Info("added benchmark variations", "count", len(variations))
 
+		benchmarks := make(map[string][]Variation)
+		for _, v := range variations {
+			benchmarks[v.Benchmark.Name] = append(benchmarks[v.Benchmark.Name], v)
+		}
+
+		var results []Benchmark
+		for name, variations := range benchmarks {
+			var benchmark Benchmark
+			benchmark.Name = name
+			benchmark.Variations = variations
+
+			results = append(results, benchmark)
+		}
+
+		// sort results by name
+		sort.Slice(results, func(i, j int) bool {
 			return results[i].Name < results[j].Name
 		})
 

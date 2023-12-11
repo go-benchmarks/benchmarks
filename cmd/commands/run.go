@@ -50,7 +50,7 @@ func runBenchmark(logger *slog.Logger, path string) error {
 
 	logger.Debug("cpu tests", "cpuTests", cpuTests)
 
-	cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-cpu", strings.Join(cpuTests, ","))
+	cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-benchtime", "100000x", "-cpu", strings.Join(cpuTests, ","))
 	cmd.Dir = path
 	output, err := cmd.CombinedOutput()
 	if err != nil {
