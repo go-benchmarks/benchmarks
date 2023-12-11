@@ -1,0 +1,12 @@
+goos: windows
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/string-concatination
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkSimpleAppend_write-32     	 1000000	     67875 ns/op	  503993 B/op	       1 allocs/op
+BenchmarkSimpleAppend_read-32      	1000000000	         0.2799 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBuffer_write-32           	258424921	         4.543 ns/op	       2 B/op	       0 allocs/op
+BenchmarkBuffer_read-32            	  574425	      2029 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkStringBuilder_write-32    	481151876	         2.360 ns/op	       6 B/op	       0 allocs/op
+BenchmarkStringBuilder_read-32     	1000000000	         0.5599 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/string-concatination	74.003s

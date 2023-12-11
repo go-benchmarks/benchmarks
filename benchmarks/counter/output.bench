@@ -1,0 +1,14 @@
+goos: windows
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/counter
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkAtomicPointerCounter_increment-32    	251108380	         4.731 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicPointerCounter_get-32          	1000000000	         0.2786 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_increment-32       	253895872	         4.732 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAtomicUintCounter_get-32             	1000000000	         0.2723 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_increment-32              	1000000000	         0.2781 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounter_get-32                    	1000000000	         0.2710 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_increment-32     	75139477	        16.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIntCounterWithMutex_get-32           	80599660	        15.67 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/counter	7.209s

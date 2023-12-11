@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+<main class="container">
+        <h1>Go Benchmark</h1>
+
+
+
+    <article>
+        
+    <h1>string-concatination</h1>
+
+    <h2>All Results</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Variation</th>
+            <th>Nanoseconds per operation</th>
+            <th>Allocations per operation</th>
+            <th>Allocated bytes per operation</th>
+            <th>MB processed per second</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        
+            
+            <tr>
+                <td>Buffer</td>
+                <td>read</td>
+                <td>2029</td>
+                <td>1</td>
+                <td>10240</td>
+                <td>0</td>
+            </tr>
+            
+        
+            
+            <tr>
+                <td>Buffer</td>
+                <td>write</td>
+                <td>4.543</td>
+                <td>0</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            
+        
+            
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            
+            <tr>
+                <td>Simple Append</td>
+                <td>read</td>
+                <td>0.2799</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+        
+            
+            <tr>
+                <td>Simple Append</td>
+                <td>write</td>
+                <td>67875</td>
+                <td>1</td>
+                <td>503993</td>
+                <td>0</td>
+            </tr>
+            
+        
+            
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            
+            <tr>
+                <td>String Builder</td>
+                <td>read</td>
+                <td>0.5599</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+        
+            
+            <tr>
+                <td>String Builder</td>
+                <td>write</td>
+                <td>2.36</td>
+                <td>0</td>
+                <td>6</td>
+                <td>0</td>
+            </tr>
+            
+        
+        </tbody>
+    </table>
+
+    </article>
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{{- /*gotype: github.com/go-benchmarks/benchmarks/cmd/internal/website.Benchmark*/ -}}
+
+{{define "title"}}{{.Name}}{{end}}
+
+{{define "content"}}
+    <h1>{{.Name}}</h1>
+
+    <h2>All Results</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Variation</th>
+            <th>Nanoseconds per operation</th>
+            <th>Allocations per operation</th>
+            <th>Allocated bytes per operation</th>
+            <th>MB processed per second</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{$lastBenchmarkName := ""}}
+        {{range $index, $element := .Results}}
+            {{if and (ne $index 0) (ne $lastBenchmarkName $element.Benchmark.Name)}}
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            {{end}}
+            <tr>
+                <td>{{$element.Benchmark.Name}}</td>
+                <td>{{$element.Variation}}</td>
+                <td>{{$element.Benchmark.NsPerOp}}</td>
+                <td>{{$element.Benchmark.AllocsPerOp}}</td>
+                <td>{{$element.Benchmark.AllocedBytesPerOp}}</td>
+                <td>{{$element.Benchmark.MBPerS}}</td>
+            </tr>
+            {{$lastBenchmarkName = $element.Benchmark.Name}}
+        {{end}}
+        </tbody>
+    </table>
+{{end}}
