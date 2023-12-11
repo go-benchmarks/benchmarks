@@ -68,8 +68,6 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 					logger.Debug("benchmark variation name parts", "parts", brVariationParts)
 					variation.Name = strings.Join(brVariationParts[:len(brVariationParts)-1], " ")
 
-					logger.Warn("variation name", "name", variation.Name)
-
 					// The last part is the CPU count, if it exists.
 					variation.CPUCount, err = strconv.Atoi(brVariationParts[len(brVariationParts)-1])
 					if err != nil {

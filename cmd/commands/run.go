@@ -38,6 +38,7 @@ var runCmd = &cobra.Command{
 }
 
 func runBenchmark(logger *slog.Logger, path string) error {
+	outputFilePath := filepath.Join(path, "output.bench")
 	logger.Debug("running benchmark", "path", path)
 
 	maxCPU := runtime.NumCPU()
@@ -50,16 +51,21 @@ func runBenchmark(logger *slog.Logger, path string) error {
 
 	logger.Debug("cpu tests", "cpuTests", cpuTests)
 
-	cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-benchtime", "100000x", "-cpu", strings.Join(cpuTests, ","))
-	cmd.Dir = path
-	output, err := cmd.CombinedOutput()
-	if err != nil {
-		logger.Error("failed to run benchmark", "path", path, "output", string(output))
-		return fmt.Errorf("failed to run benchmark: %w", err)
+	benchtimes := []string{"10000x", "50000x", "100000x"}
+	var output []byte
+	for _, benchtime := range benchtimes {
+		cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-benchtime", benchtime, "-cpu", strings.Join(cpuTests, ","))
+		logger.Debug("executing benchmark command", "command", cmd.String(), "path", path)
+		cmd.Dir = path
+		result, err := cmd.CombinedOutput()
+		if err != nil {
+			logger.Error("failed to run benchmark", "path", path, "output", string(output))
+			return fmt.Errorf("failed to run benchmark: %w", err)
+		}
+		output = append(output, result...)
 	}
 
 	logger.Info("writing benchmark output", "path", path+string(os.PathSeparator)+"output.bench")
-	outputFilePath := filepath.Join(path, "output.bench")
 	return os.WriteFile(outputFilePath, output, 0644)
 }
 
