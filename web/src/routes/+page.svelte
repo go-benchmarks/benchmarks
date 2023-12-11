@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+
+    import {getBenchmarkGroups} from "$lib/model";
+
+    const benchmarkGroups = getBenchmarkGroups()
+</script>
+
+<ul>
+{#each benchmarkGroups as group}
+    <li>
+        <a href="./benchmark/{group.Name}">{group.Name}</a>
+    </li>
+{/each}
+</ul>

@@ -1,7 +1,7 @@
 [
   {
-    "name": "counter",
-    "benchmarks": [
+    "Name": "counter",
+    "Benchmarks": [
       {
         "Name": "Atomic Pointer Counter",
         "N": 252262849,
@@ -11,7 +11,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 0,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Atomic Pointer Counter",
@@ -22,43 +24,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 6,
-        "CPUCount": 1
-      },
-      {
-        "Name": "Atomic Pointer Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.275,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 7,
-        "variation": "get",
-        "CPUCount": 2
-      },
-      {
-        "Name": "Atomic Pointer Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.274,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 11,
-        "variation": "get",
-        "CPUCount": 32
-      },
-      {
-        "Name": "Atomic Pointer Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2755,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 10,
-        "variation": "get",
-        "CPUCount": 16
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Atomic Pointer Counter",
@@ -69,8 +37,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 9,
-        "variation": "get",
-        "CPUCount": 8
+        "Variation": "get",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Atomic Pointer Counter",
@@ -81,8 +50,48 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 8,
-        "variation": "get",
-        "CPUCount": 4
+        "Variation": "get",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Pointer Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.2755,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 10,
+        "Variation": "get",
+        "CPUCount": 16,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Pointer Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.274,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 11,
+        "Variation": "get",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Pointer Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.275,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 7,
+        "Variation": "get",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Atomic Pointer Counter",
@@ -93,44 +102,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 3,
-        "variation": "increment",
-        "CPUCount": 8
-      },
-      {
-        "Name": "Atomic Pointer Counter",
-        "N": 252801834,
-        "NsPerOp": 4.768,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 5,
-        "variation": "increment",
-        "CPUCount": 32
-      },
-      {
-        "Name": "Atomic Pointer Counter",
-        "N": 251710582,
-        "NsPerOp": 4.767,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 4,
-        "variation": "increment",
-        "CPUCount": 16
-      },
-      {
-        "Name": "Atomic Pointer Counter",
-        "N": 253014508,
-        "NsPerOp": 4.782,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 2,
-        "variation": "increment",
-        "CPUCount": 4
+        "Variation": "increment",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Atomic Pointer Counter",
@@ -141,8 +115,48 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 1,
-        "variation": "increment",
-        "CPUCount": 2
+        "Variation": "increment",
+        "CPUCount": 2,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Pointer Counter",
+        "N": 252801834,
+        "NsPerOp": 4.768,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 5,
+        "Variation": "increment",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Pointer Counter",
+        "N": 253014508,
+        "NsPerOp": 4.782,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 2,
+        "Variation": "increment",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Pointer Counter",
+        "N": 251710582,
+        "NsPerOp": 4.767,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 4,
+        "Variation": "increment",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
@@ -153,7 +167,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 18,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
@@ -164,31 +180,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 12,
-        "CPUCount": 1
-      },
-      {
-        "Name": "Atomic Uint Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.276,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 22,
-        "variation": "get",
-        "CPUCount": 16
-      },
-      {
-        "Name": "Atomic Uint Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2755,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 20,
-        "variation": "get",
-        "CPUCount": 4
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
@@ -199,20 +193,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 19,
-        "variation": "get",
-        "CPUCount": 2
-      },
-      {
-        "Name": "Atomic Uint Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2785,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 21,
-        "variation": "get",
-        "CPUCount": 8
+        "Variation": "get",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
@@ -223,44 +206,48 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 23,
-        "variation": "get",
-        "CPUCount": 32
+        "Variation": "get",
+        "CPUCount": 32,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
-        "N": 250867006,
-        "NsPerOp": 4.785,
+        "N": 1000000000,
+        "NsPerOp": 0.2785,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 14,
-        "variation": "increment",
-        "CPUCount": 4
+        "Ord": 21,
+        "Variation": "get",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
-        "N": 251061571,
-        "NsPerOp": 4.771,
+        "N": 1000000000,
+        "NsPerOp": 0.276,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 15,
-        "variation": "increment",
-        "CPUCount": 8
+        "Ord": 22,
+        "Variation": "get",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
-        "N": 251384658,
-        "NsPerOp": 4.743,
+        "N": 1000000000,
+        "NsPerOp": 0.2755,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 13,
-        "variation": "increment",
-        "CPUCount": 2
+        "Ord": 20,
+        "Variation": "get",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
@@ -271,8 +258,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 17,
-        "variation": "increment",
-        "CPUCount": 32
+        "Variation": "increment",
+        "CPUCount": 32,
+        "Performance": 0
       },
       {
         "Name": "Atomic Uint Counter",
@@ -283,19 +271,48 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 16,
-        "variation": "increment",
-        "CPUCount": 16
+        "Variation": "increment",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
-        "Name": "Int Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2726,
+        "Name": "Atomic Uint Counter",
+        "N": 251061571,
+        "NsPerOp": 4.771,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 24,
-        "CPUCount": 1
+        "Ord": 15,
+        "Variation": "increment",
+        "CPUCount": 8,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Uint Counter",
+        "N": 251384658,
+        "NsPerOp": 4.743,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 13,
+        "Variation": "increment",
+        "CPUCount": 2,
+        "Performance": 0
+      },
+      {
+        "Name": "Atomic Uint Counter",
+        "N": 250867006,
+        "NsPerOp": 4.785,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 14,
+        "Variation": "increment",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
@@ -306,19 +323,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 30,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
         "N": 1000000000,
-        "NsPerOp": 0.275,
+        "NsPerOp": 0.2726,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 34,
-        "variation": "get",
-        "CPUCount": 16
+        "Ord": 24,
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
@@ -329,20 +349,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 32,
-        "variation": "get",
-        "CPUCount": 4
-      },
-      {
-        "Name": "Int Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2755,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 33,
-        "variation": "get",
-        "CPUCount": 8
+        "Variation": "get",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
@@ -353,8 +362,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 35,
-        "variation": "get",
-        "CPUCount": 32
+        "Variation": "get",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.2755,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 33,
+        "Variation": "get",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
@@ -365,56 +388,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 31,
-        "variation": "get",
-        "CPUCount": 2
+        "Variation": "get",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
         "N": 1000000000,
-        "NsPerOp": 0.2779,
+        "NsPerOp": 0.275,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 25,
-        "variation": "increment",
-        "CPUCount": 2
-      },
-      {
-        "Name": "Int Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2766,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 28,
-        "variation": "increment",
-        "CPUCount": 16
-      },
-      {
-        "Name": "Int Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2741,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 26,
-        "variation": "increment",
-        "CPUCount": 4
-      },
-      {
-        "Name": "Int Counter",
-        "N": 1000000000,
-        "NsPerOp": 0.2725,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 29,
-        "variation": "increment",
-        "CPUCount": 32
+        "Ord": 34,
+        "Variation": "get",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "Int Counter",
@@ -425,19 +414,61 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 27,
-        "variation": "increment",
-        "CPUCount": 8
+        "Variation": "increment",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
-        "Name": "Int Counter With Mutex",
-        "N": 72483902,
-        "NsPerOp": 16.3,
+        "Name": "Int Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.2741,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 36,
-        "CPUCount": 1
+        "Ord": 26,
+        "Variation": "increment",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.2766,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 28,
+        "Variation": "increment",
+        "CPUCount": 16,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.2725,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 29,
+        "Variation": "increment",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter",
+        "N": 1000000000,
+        "NsPerOp": 0.2779,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 25,
+        "Variation": "increment",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -448,43 +479,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 42,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
-        "N": 79735808,
-        "NsPerOp": 15.77,
+        "N": 72483902,
+        "NsPerOp": 16.3,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 43,
-        "variation": "get",
-        "CPUCount": 2
-      },
-      {
-        "Name": "Int Counter With Mutex",
-        "N": 77112397,
-        "NsPerOp": 15.68,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 44,
-        "variation": "get",
-        "CPUCount": 4
-      },
-      {
-        "Name": "Int Counter With Mutex",
-        "N": 77042590,
-        "NsPerOp": 15.81,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 46,
-        "variation": "get",
-        "CPUCount": 16
+        "Ord": 36,
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -495,8 +505,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 47,
-        "variation": "get",
-        "CPUCount": 32
+        "Variation": "get",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter With Mutex",
+        "N": 79735808,
+        "NsPerOp": 15.77,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 43,
+        "Variation": "get",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -507,8 +531,35 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 45,
-        "variation": "get",
-        "CPUCount": 8
+        "Variation": "get",
+        "CPUCount": 8,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter With Mutex",
+        "N": 77112397,
+        "NsPerOp": 15.68,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 44,
+        "Variation": "get",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter With Mutex",
+        "N": 77042590,
+        "NsPerOp": 15.81,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 46,
+        "Variation": "get",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -519,20 +570,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 41,
-        "variation": "increment",
-        "CPUCount": 32
-      },
-      {
-        "Name": "Int Counter With Mutex",
-        "N": 77093571,
-        "NsPerOp": 16.2,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 37,
-        "variation": "increment",
-        "CPUCount": 2
+        "Variation": "increment",
+        "CPUCount": 32,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -543,8 +583,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 39,
-        "variation": "increment",
-        "CPUCount": 8
+        "Variation": "increment",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -555,8 +596,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 38,
-        "variation": "increment",
-        "CPUCount": 4
+        "Variation": "increment",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "Int Counter With Mutex",
+        "N": 77093571,
+        "NsPerOp": 16.2,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 37,
+        "Variation": "increment",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Int Counter With Mutex",
@@ -567,14 +622,15 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 40,
-        "variation": "increment",
-        "CPUCount": 16
+        "Variation": "increment",
+        "CPUCount": 16,
+        "Performance": 0
       }
     ]
   },
   {
-    "name": "string-concatination",
-    "benchmarks": [
+    "Name": "string-concatination",
+    "Benchmarks": [
       {
         "Name": "Buffer",
         "N": 250352736,
@@ -584,7 +640,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 12,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -595,7 +653,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 18,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -606,20 +666,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 19,
-        "variation": "read",
-        "CPUCount": 2
-      },
-      {
-        "Name": "Buffer",
-        "N": 507675,
-        "NsPerOp": 2127,
-        "AllocedBytesPerOp": 10240,
-        "AllocsPerOp": 1,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 23,
-        "variation": "read",
-        "CPUCount": 32
+        "Variation": "read",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -630,8 +679,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 21,
-        "variation": "read",
-        "CPUCount": 8
+        "Variation": "read",
+        "CPUCount": 8,
+        "Performance": 0
+      },
+      {
+        "Name": "Buffer",
+        "N": 507675,
+        "NsPerOp": 2127,
+        "AllocedBytesPerOp": 10240,
+        "AllocsPerOp": 1,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 23,
+        "Variation": "read",
+        "CPUCount": 32,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -642,8 +705,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 22,
-        "variation": "read",
-        "CPUCount": 16
+        "Variation": "read",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -654,8 +718,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 20,
-        "variation": "read",
-        "CPUCount": 4
+        "Variation": "read",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -666,20 +731,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 14,
-        "variation": "write",
-        "CPUCount": 4
-      },
-      {
-        "Name": "Buffer",
-        "N": 277089286,
-        "NsPerOp": 4.426,
-        "AllocedBytesPerOp": 3,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 17,
-        "variation": "write",
-        "CPUCount": 32
+        "Variation": "write",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -690,8 +744,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 15,
-        "variation": "write",
-        "CPUCount": 8
+        "Variation": "write",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -702,8 +757,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 13,
-        "variation": "write",
-        "CPUCount": 2
+        "Variation": "write",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "Buffer",
@@ -714,8 +770,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 16,
-        "variation": "write",
-        "CPUCount": 16
+        "Variation": "write",
+        "CPUCount": 16,
+        "Performance": 0
+      },
+      {
+        "Name": "Buffer",
+        "N": 277089286,
+        "NsPerOp": 4.426,
+        "AllocedBytesPerOp": 3,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 17,
+        "Variation": "write",
+        "CPUCount": 32,
+        "Performance": 0
       },
       {
         "Name": "Simple Append",
@@ -726,7 +796,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 0,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Simple Append",
@@ -737,43 +809,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 6,
-        "CPUCount": 1
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000000,
-        "NsPerOp": 0.2752,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 11,
-        "variation": "read",
-        "CPUCount": 32
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000000,
-        "NsPerOp": 0.2769,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 8,
-        "variation": "read",
-        "CPUCount": 4
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000000,
-        "NsPerOp": 0.273,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 9,
-        "variation": "read",
-        "CPUCount": 8
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "Simple Append",
@@ -784,8 +822,48 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 7,
-        "variation": "read",
-        "CPUCount": 2
+        "Variation": "read",
+        "CPUCount": 2,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000000,
+        "NsPerOp": 0.2769,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 8,
+        "Variation": "read",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000000,
+        "NsPerOp": 0.2752,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 11,
+        "Variation": "read",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000000,
+        "NsPerOp": 0.273,
+        "AllocedBytesPerOp": 0,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 9,
+        "Variation": "read",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "Simple Append",
@@ -796,56 +874,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 10,
-        "variation": "read",
-        "CPUCount": 16
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000,
-        "NsPerOp": 60751,
-        "AllocedBytesPerOp": 503993,
-        "AllocsPerOp": 1,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 2,
-        "variation": "write",
-        "CPUCount": 4
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000,
-        "NsPerOp": 37876,
-        "AllocedBytesPerOp": 503992,
-        "AllocsPerOp": 1,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 1,
-        "variation": "write",
-        "CPUCount": 2
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000,
-        "NsPerOp": 67076,
-        "AllocedBytesPerOp": 503994,
-        "AllocsPerOp": 1,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 4,
-        "variation": "write",
-        "CPUCount": 16
-      },
-      {
-        "Name": "Simple Append",
-        "N": 1000000,
-        "NsPerOp": 68501,
-        "AllocedBytesPerOp": 503993,
-        "AllocsPerOp": 1,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 5,
-        "variation": "write",
-        "CPUCount": 32
+        "Variation": "read",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "Simple Append",
@@ -856,8 +887,61 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 3,
-        "variation": "write",
-        "CPUCount": 8
+        "Variation": "write",
+        "CPUCount": 8,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000,
+        "NsPerOp": 68501,
+        "AllocedBytesPerOp": 503993,
+        "AllocsPerOp": 1,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 5,
+        "Variation": "write",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000,
+        "NsPerOp": 37876,
+        "AllocedBytesPerOp": 503992,
+        "AllocsPerOp": 1,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 1,
+        "Variation": "write",
+        "CPUCount": 2,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000,
+        "NsPerOp": 67076,
+        "AllocedBytesPerOp": 503994,
+        "AllocsPerOp": 1,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 4,
+        "Variation": "write",
+        "CPUCount": 16,
+        "Performance": 0
+      },
+      {
+        "Name": "Simple Append",
+        "N": 1000000,
+        "NsPerOp": 60751,
+        "AllocedBytesPerOp": 503993,
+        "AllocsPerOp": 1,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 2,
+        "Variation": "write",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -868,7 +952,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 24,
-        "CPUCount": 1
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -879,19 +965,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 30,
-        "CPUCount": 1
-      },
-      {
-        "Name": "String Builder",
-        "N": 1000000000,
-        "NsPerOp": 0.5473,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 31,
-        "variation": "read",
-        "CPUCount": 2
+        "Variation": "",
+        "CPUCount": 1,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -902,32 +978,22 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 35,
-        "variation": "read",
-        "CPUCount": 32
+        "Variation": "read",
+        "CPUCount": 32,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
         "N": 1000000000,
-        "NsPerOp": 0.5453,
+        "NsPerOp": 0.5473,
         "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 32,
-        "variation": "read",
-        "CPUCount": 4
-      },
-      {
-        "Name": "String Builder",
-        "N": 1000000000,
-        "NsPerOp": 0.5537,
-        "AllocedBytesPerOp": 0,
-        "AllocsPerOp": 0,
-        "MBPerS": 0,
-        "Measured": 13,
-        "Ord": 34,
-        "variation": "read",
-        "CPUCount": 16
+        "Ord": 31,
+        "Variation": "read",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -938,32 +1004,35 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 33,
-        "variation": "read",
-        "CPUCount": 8
+        "Variation": "read",
+        "CPUCount": 8,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
-        "N": 724236201,
-        "NsPerOp": 2.879,
-        "AllocedBytesPerOp": 5,
+        "N": 1000000000,
+        "NsPerOp": 0.5537,
+        "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 25,
-        "variation": "write",
-        "CPUCount": 2
+        "Ord": 34,
+        "Variation": "read",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
-        "N": 720163807,
-        "NsPerOp": 1.886,
-        "AllocedBytesPerOp": 5,
+        "N": 1000000000,
+        "NsPerOp": 0.5453,
+        "AllocedBytesPerOp": 0,
         "AllocsPerOp": 0,
         "MBPerS": 0,
         "Measured": 13,
-        "Ord": 26,
-        "variation": "write",
-        "CPUCount": 4
+        "Ord": 32,
+        "Variation": "read",
+        "CPUCount": 4,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -974,8 +1043,35 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 29,
-        "variation": "write",
-        "CPUCount": 32
+        "Variation": "write",
+        "CPUCount": 32,
+        "Performance": 0
+      },
+      {
+        "Name": "String Builder",
+        "N": 720163807,
+        "NsPerOp": 1.886,
+        "AllocedBytesPerOp": 5,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 26,
+        "Variation": "write",
+        "CPUCount": 4,
+        "Performance": 0
+      },
+      {
+        "Name": "String Builder",
+        "N": 724236201,
+        "NsPerOp": 2.879,
+        "AllocedBytesPerOp": 5,
+        "AllocsPerOp": 0,
+        "MBPerS": 0,
+        "Measured": 13,
+        "Ord": 25,
+        "Variation": "write",
+        "CPUCount": 2,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -986,8 +1082,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 28,
-        "variation": "write",
-        "CPUCount": 16
+        "Variation": "write",
+        "CPUCount": 16,
+        "Performance": 0
       },
       {
         "Name": "String Builder",
@@ -998,8 +1095,9 @@
         "MBPerS": 0,
         "Measured": 13,
         "Ord": 27,
-        "variation": "write",
-        "CPUCount": 8
+        "Variation": "write",
+        "CPUCount": 8,
+        "Performance": 0
       }
     ]
   }
