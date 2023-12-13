@@ -25,7 +25,7 @@ var generateCmd = &cobra.Command{
 			return fmt.Errorf("benchmarks directory does not exist: %s", benchmarksDir)
 		}
 
-		j, err := parser.GenerateJson(logger, benchmarksDir, false)
+		j, err := parser.GenerateJson(logger, benchmarksDir, true)
 		if err != nil {
 			return fmt.Errorf("failed to generate output: %w", err)
 		}
@@ -40,7 +40,7 @@ var generateCmd = &cobra.Command{
 
 func init() {
 	generateCmd.Flags().StringP("benchmarks", "b", "./benchmarks", "Filepath of the \"benchmarks\" directory")
-	generateCmd.Flags().StringP("file", "f", "./web/src/lib/benchmarks.json", "Path of the output file")
+	generateCmd.Flags().StringP("file", "f", "./benchmarks.json", "Path of the output file")
 
 	rootCmd.AddCommand(generateCmd)
 }

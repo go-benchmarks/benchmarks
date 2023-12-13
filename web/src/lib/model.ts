@@ -1,4 +1,4 @@
-import j from "$lib/benchmarks.json"
+import j from "../../../benchmarks.json"
 
 export type BenchmarkGroups = BenchmarkGroup[]
 
