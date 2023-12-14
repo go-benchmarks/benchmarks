@@ -76,7 +76,7 @@
 
     {#each benchmarks as benchmark}
         <section id="{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">
-            <h3>{benchmark.Name}</h3>
+            <h3 class="underline"><a href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a></h3>
 
             {#each uniqueVariationNames as vari}
                 <h4>{vari}</h4>
@@ -89,7 +89,7 @@
     {/each}
 </div>
 
-<style>
+<style lang="scss">
     aside {
         @apply text-center;
     }

@@ -76,6 +76,8 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 					}
 				}
 
+				variation.Name = strings.ToUpper(variation.Name)
+
 				// Split name. "BenchmarkName" -> "BenchmarkGroup Name". Split happens at every uppercase letter.
 				variation.Benchmark.Name = strings.Join(utils.SplitCamelCase(variation.Benchmark.Name)[2:], " ")
 				logger.Debug("adding benchmark variation", "benchmark name", variation.Benchmark.Name, "variation name", variation.Name, "cpuCount", variation.CPUCount, "orig name", s)
