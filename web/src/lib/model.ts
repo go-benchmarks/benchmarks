@@ -33,7 +33,7 @@ export function getBenchmarkGroups(): BenchmarkGroups {
     return j
 }
 
-export function convertBenchmarksToLineChartData(benchmarks: Benchmark[]) {
+export function convertBenchmarksToCPUCountPerformanceLineChart(benchmarks: Benchmark[]) {
     // Make copy of benchmarks
     benchmarks = JSON.parse(JSON.stringify(benchmarks));
 
@@ -95,20 +95,72 @@ export function convertBenchmarksToLineChartData(benchmarks: Benchmark[]) {
     };
 }
 
-export function getLineChartOptions() {
+export function convertBenchmarksToRunCountPerformanceLineChart(benchmarks: Benchmark[]) {
+    // Make copy of benchmarks
+    benchmarks = JSON.parse(JSON.stringify(benchmarks));
+
+    // Prepare an array to hold datasets for each Benchmark
+    let datasets: {
+        label: string;
+        data: { x: number; y: number; }[];
+        fill: boolean;
+        borderColor: string;
+        tension: number;
+    }[] = [];
+    let ns = new Set<number>();
+
+    // Only keep variations that have the highest CPU Count in each benchmark
+    // For example: If there are variations for a benchmark with CPUCount=1, CPUCount=2, CPUCount=4, CPUCount=8, CPUCount=16, CPUCount=32
+    // We only want to keep all variations with CPUCount=32
+    benchmarks.forEach(benchmark => {
+        const maxCPUCount = Math.max(...benchmark.Variations.map(variation => variation.CPUCount));
+        benchmark.Variations = benchmark.Variations.filter(variation => variation.CPUCount === maxCPUCount);
+    });
+
+    benchmarks.forEach(benchmark => {
+        benchmark.Variations.forEach(variation => {
+            // Collect all unique N values
+            ns.add(variation.N);
+
+            // Find or create the dataset for this Benchmark and Variation combination
+            let dataset = datasets.find(d => d.label === `${variation.Name}`);
+            if (!dataset) {
+                dataset = {
+                    label: `${variation.Name}`,
+                    data: [],
+                    fill: false,
+                    borderColor: getRandomColor(), // Function to generate random colors
+                    tension: 0.1
+                };
+                datasets.push(dataset);
+            }
+
+            // Add the data point for this Variation
+            dataset.data.push({
+                x: variation.N,
+                y: variation.OpsPerSec
+            });
+        });
+    });
+
+    // Sort the data points within each dataset by N
+    datasets.forEach(dataset => {
+        dataset.data.sort((a, b) => a.x - b.x);
+    });
+
+    // Convert the N set to an array and sort it
+    const labels = Array.from(ns).sort((a, b) => a - b);
+
+
+    return {
+        labels: labels.map(l => l + " Runs"),
+        datasets: datasets
+    };
+}
+
+export function getLineChartOptions(isLogarithmic: boolean) {
     return {
         plugins: {
-            zoom: {
-                zoom: {
-                    wheel: {
-                        enabled: true,
-                    },
-                    pinch: {
-                        enabled: true
-                    },
-                    mode: 'xy',
-                }
-            },
             tooltip: {
                 callbacks: {
                     label: function (context: any) {
@@ -128,6 +180,7 @@ export function getLineChartOptions() {
         },
         scales: {
             y: {
+                type: isLogarithmic ? 'logarithmic' : 'linear', // Set scale type based on isLogarithmic
                 ticks: {
                     callback: function (value: any) {
                         return value + ' ops/sec';
@@ -137,8 +190,7 @@ export function getLineChartOptions() {
         }
     }
 }
-
-export function getBarChartDataByCPUCount(benchmarks: Benchmark[]) {
+export function getBarChartDataByCPUCountMulti(benchmarks: Benchmark[]) {
     // Make copy of benchmarks
     benchmarks = JSON.parse(JSON.stringify(benchmarks));
 
@@ -183,7 +235,57 @@ export function getBarChartDataByCPUCount(benchmarks: Benchmark[]) {
     };
 }
 
-export function getBarChartDataByRuns(benchmarks: Benchmark[]) {
+export function getChartDataByCPUCount(benchmark: Benchmark) {
+    // Make copy of benchmarks
+    benchmark = JSON.parse(JSON.stringify(benchmark));
+
+    // Create a unique list of all CPU counts across all variations
+    const cpuCounts = benchmark.Variations
+        .map(variation => variation.CPUCount)
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .sort((a, b) => a - b); // Sort the CPU counts for consistent ordering
+
+    // Create a unique list of all Run Counts across all variations
+    const runCounts = benchmark.Variations
+        .map(variation => variation.N)
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .sort((a, b) => a - b); // Sort the Run Counts for consistent ordering
+
+    // Initialize datasets.
+    const datasets = runCounts.map(runCount => {
+        return {
+            label: `${runCount} Runs`,
+            data: cpuCounts.map(cpuCount => {
+                // Find the variation with this Run Count and CPU Count
+                const variation = benchmark.Variations.find(v => v.N === runCount && v.CPUCount === cpuCount);
+                // If a variation is found, return its OpsPerSec, otherwise return null
+                return variation ? variation.OpsPerSec : null;
+            }),
+            backgroundColor: getRandomColor(), // Function to generate a color for each Run Count line
+            borderColor: getRandomColor(), // Function to generate a color for each line
+        };
+    });
+
+    // Labels for the chart is the CPU Core count
+    const labels = cpuCounts.map(cpuCount => cpuCount + " CPU Cores");
+
+    return {
+        labels: labels, // x-axis labels for the benchmarks
+        datasets: datasets, // datasets for each Run Count
+    };
+}
+
+export function filterBenchmarkByVariationName(benchmark: Benchmark, variationName: string) {
+    // Make copy of benchmarks
+    benchmark = JSON.parse(JSON.stringify(benchmark));
+
+    // Filter out benchmarks that have the specified variation name
+    benchmark.Variations = benchmark.Variations.filter(variation => variation.Name === variationName);
+
+    return benchmark;
+}
+
+export function getBarChartDataByRunsMulti(benchmarks: Benchmark[]) {
     // Make copy of benchmarks
     benchmarks = JSON.parse(JSON.stringify(benchmarks));
 
@@ -225,6 +327,46 @@ export function getBarChartDataByRuns(benchmarks: Benchmark[]) {
     return {
         labels: labels, // x-axis labels for the variations
         datasets: datasets, // datasets for each CPU count
+    };
+}
+
+export function getChartDataByRuns(benchmark: Benchmark) {
+    // Make copy of benchmarks
+    benchmark = JSON.parse(JSON.stringify(benchmark));
+
+    // Create a unique list of all Run Counts across all variations
+    const runCounts = benchmark.Variations
+        .map(variation => variation.N)
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .sort((a, b) => a - b); // Sort the Run Counts for consistent ordering
+
+    // Create a unique list of all CPU Counts across all variations
+    const cpuCounts = benchmark.Variations
+        .map(variation => variation.CPUCount)
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .sort((a, b) => a - b); // Sort the CPU Counts for consistent ordering
+
+    // Initialize datasets.
+    const datasets = cpuCounts.map(cpuCount => {
+        return {
+            label: `${cpuCount} CPU Cores`,
+            data: runCounts.map(n => {
+                // Find the variation with this Run Count and CPU Count
+                const variation = benchmark.Variations.find(v => v.N === n && v.CPUCount === cpuCount);
+                // If a variation is found, return its OpsPerSec, otherwise return null
+                return variation ? variation.OpsPerSec : null;
+            }),
+            backgroundColor: getRandomColor(), // Function to generate a color for each CPU Count line
+            borderColor: getRandomColor(), // Function to generate a color for each line
+        };
+    });
+
+    // Labels for the chart is the Run count
+    const labels = runCounts.map(n => n + " Runs");
+
+    return {
+        labels: labels, // x-axis labels for the benchmarks
+        datasets: datasets, // datasets for each CPU Count
     };
 }
 

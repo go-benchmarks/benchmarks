@@ -2,91 +2,183 @@ goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkFmt_println       	     100	       437.6 ns/op	      50 B/op	       1 allocs/op
-BenchmarkFmt_println-2     	     100	       474.9 ns/op	      54 B/op	       1 allocs/op
-BenchmarkFmt_println-4     	     100	       465.8 ns/op	      54 B/op	       1 allocs/op
-BenchmarkFmt_println-8     	     100	       453.4 ns/op	      61 B/op	       1 allocs/op
-BenchmarkFmt_println-16    	     100	       503.7 ns/op	      69 B/op	       1 allocs/op
-BenchmarkFmt_println-32    	     100	       439.8 ns/op	      92 B/op	       1 allocs/op
-BenchmarkFmt_print         	     100	       424.1 ns/op	      50 B/op	       1 allocs/op
-BenchmarkFmt_print-2       	     100	       433.1 ns/op	      54 B/op	       1 allocs/op
-BenchmarkFmt_print-4       	     100	       565.0 ns/op	      56 B/op	       1 allocs/op
-BenchmarkFmt_print-8       	     100	       471.4 ns/op	      61 B/op	       1 allocs/op
-BenchmarkFmt_print-16      	     100	       507.9 ns/op	      69 B/op	       1 allocs/op
-BenchmarkFmt_print-32      	     100	       523.6 ns/op	      92 B/op	       1 allocs/op
-BenchmarkFmt_printf        	     100	       421.2 ns/op	      50 B/op	       1 allocs/op
-BenchmarkFmt_printf-2      	     100	       468.4 ns/op	      54 B/op	       1 allocs/op
-BenchmarkFmt_printf-4      	     100	       816.1 ns/op	      56 B/op	       1 allocs/op
-BenchmarkFmt_printf-8      	     100	       468.3 ns/op	      61 B/op	       1 allocs/op
-BenchmarkFmt_printf-16     	     100	       459.9 ns/op	      72 B/op	       1 allocs/op
-BenchmarkFmt_printf-32     	     100	       485.7 ns/op	      90 B/op	       1 allocs/op
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.022s
+BenchmarkFmt_println       	    1000	       298.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	    1000	       392.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	    1000	       352.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	    1000	       295.3 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	    1000	       325.9 ns/op	      50 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	    1000	       301.5 ns/op	      52 B/op	       1 allocs/op
+BenchmarkFmt_print         	    1000	       313.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	    1000	       341.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	    1000	       305.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	    1000	       288.1 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	    1000	       321.9 ns/op	      50 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	    1000	       331.4 ns/op	      52 B/op	       1 allocs/op
+BenchmarkFmt_printf        	    1000	       311.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	    1000	       317.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	    1000	       304.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	    1000	       334.0 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	    1000	       388.9 ns/op	      50 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	    1000	       314.5 ns/op	      52 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.028s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkFmt_println       	   10000	       287.9 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-2     	   10000	       276.9 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-4     	   10000	       289.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-8     	   10000	       279.8 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-16    	   10000	       273.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-32    	   10000	       271.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print         	   10000	       298.9 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-2       	   10000	       291.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-4       	   10000	       294.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-8       	   10000	       286.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-16      	   10000	       295.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-32      	   10000	       277.2 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf        	   10000	       283.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-2      	   10000	       280.9 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-4      	   10000	       335.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-8      	   10000	       281.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-16     	   10000	       299.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-32     	   10000	       280.5 ns/op	      48 B/op	       1 allocs/op
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.071s
+BenchmarkFmt_println       	    2000	       290.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	    2000	       292.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	    2000	       311.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	    2000	       290.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	    2000	       296.5 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	    2000	       311.8 ns/op	      50 B/op	       1 allocs/op
+BenchmarkFmt_print         	    2000	       309.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	    2000	       302.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	    2000	       319.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	    2000	       310.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	    2000	       304.5 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	    2000	       354.0 ns/op	      50 B/op	       1 allocs/op
+BenchmarkFmt_printf        	    2000	       299.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	    2000	       340.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	    2000	       307.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	    2000	       343.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	    2000	       309.3 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	    2000	       302.5 ns/op	      50 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.033s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkFmt_println       	   50000	       269.7 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-2     	   50000	       277.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-4     	   50000	       268.1 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-8     	   50000	       291.8 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-16    	   50000	       270.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-32    	   50000	       277.1 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print         	   50000	       291.7 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-2       	   50000	       312.3 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-4       	   50000	       299.2 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-8       	   50000	       298.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-16      	   50000	       278.8 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-32      	   50000	       295.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf        	   50000	       275.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-2      	   50000	       284.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-4      	   50000	       283.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-8      	   50000	       302.3 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-16     	   50000	       308.9 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-32     	   50000	       308.9 ns/op	      48 B/op	       1 allocs/op
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.282s
+BenchmarkFmt_println       	    3000	       293.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	    3000	       275.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	    3000	       307.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	    3000	       286.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	    3000	       292.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	    3000	       285.2 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_print         	    3000	       309.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	    3000	       299.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	    3000	       300.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	    3000	       311.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	    3000	       289.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	    3000	       290.3 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_printf        	    3000	       314.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	    3000	       311.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	    3000	       316.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	    3000	       320.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	    3000	       301.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	    3000	       403.1 ns/op	      49 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.039s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkFmt_println       	  100000	       272.2 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-2     	  100000	       276.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-4     	  100000	       274.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-8     	  100000	       287.3 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-16    	  100000	       274.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_println-32    	  100000	       302.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print         	  100000	       280.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-2       	  100000	       281.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-4       	  100000	       278.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-8       	  100000	       277.5 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-16      	  100000	       305.8 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_print-32      	  100000	       289.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf        	  100000	       286.6 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-2      	  100000	       310.1 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-4      	  100000	       282.1 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-8      	  100000	       311.0 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-16     	  100000	       286.4 ns/op	      48 B/op	       1 allocs/op
-BenchmarkFmt_printf-32     	  100000	       284.1 ns/op	      48 B/op	       1 allocs/op
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.540s
+BenchmarkFmt_println       	    4000	       281.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	    4000	       282.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	    4000	       280.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	    4000	       306.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	    4000	       302.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	    4000	       283.8 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_print         	    4000	       306.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	    4000	       285.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	    4000	       289.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	    4000	       303.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	    4000	       293.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	    4000	       286.4 ns/op	      49 B/op	       1 allocs/op
+BenchmarkFmt_printf        	    4000	       302.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	    4000	       291.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	    4000	       296.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	    4000	       284.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	    4000	       285.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	    4000	       308.7 ns/op	      49 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.042s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkFmt_println       	    5000	       331.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	    5000	       301.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	    5000	       305.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	    5000	       281.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	    5000	       289.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	    5000	       295.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print         	    5000	       299.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	    5000	       280.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	    5000	       277.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	    5000	       318.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	    5000	       291.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	    5000	       279.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf        	    5000	       309.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	    5000	       287.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	    5000	       283.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	    5000	       291.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	    5000	       298.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	    5000	       294.3 ns/op	      48 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.048s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkFmt_println       	   10000	       280.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	   10000	       327.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	   10000	       323.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	   10000	       285.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	   10000	       290.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	   10000	       267.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print         	   10000	       310.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	   10000	       323.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	   10000	       339.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	   10000	       310.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	   10000	       361.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	   10000	       321.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf        	   10000	       337.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	   10000	       331.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	   10000	       336.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	   10000	       356.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	   10000	       360.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	   10000	       401.2 ns/op	      48 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.082s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkFmt_println       	   50000	       282.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	   50000	       295.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	   50000	       292.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	   50000	       282.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	   50000	       272.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	   50000	       276.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print         	   50000	       272.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	   50000	       283.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	   50000	       272.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	   50000	       276.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	   50000	       270.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	   50000	       273.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf        	   50000	       281.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	   50000	       284.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	   50000	       275.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	   50000	       285.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	   50000	       278.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	   50000	       285.7 ns/op	      48 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.275s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/fmt
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkFmt_println       	  100000	       276.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-2     	  100000	       274.6 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-4     	  100000	       285.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-8     	  100000	       295.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-16    	  100000	       289.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_println-32    	  100000	       298.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print         	  100000	       292.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-2       	  100000	       284.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-4       	  100000	       299.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-8       	  100000	       298.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-16      	  100000	       292.0 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_print-32      	  100000	       300.9 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf        	  100000	       299.2 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-2      	  100000	       291.8 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-4      	  100000	       288.1 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-8      	  100000	       297.3 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-16     	  100000	       289.4 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFmt_printf-32     	  100000	       298.8 ns/op	      48 B/op	       1 allocs/op
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/fmt	0.552s

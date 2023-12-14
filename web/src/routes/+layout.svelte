@@ -1,19 +1,17 @@
 <script>
+  import "../app.scss";
   import NavBar from "$lib/components/NavBar.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<svelte:head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-</svelte:head>
-
 <NavBar/>
-<main class="container">
+<main class="min-h-screen">
     <slot></slot>
 </main>
+<Footer/>
 
-<style>
+<style lang="scss">
     main {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        @apply mt-28 mx-auto sm:w-3/4 max-w-7xl;
     }
 </style>

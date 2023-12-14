@@ -1,75 +1,51 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  important: true,
+  darkMode: ['class', '[data-theme="dark"]'],
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      colors: {
-        grey: {
-          50: 'hsl(205, 20%, 94%)',
-          100: 'hsl(205, 18%, 86%)',
-          200: 'hsl(205, 16%, 77%)',
-          300: 'hsl(205, 14%, 68%)',
-          400: 'hsl(205, 12%, 59%)',
-          500: 'hsl(205, 10%, 50%)',
-          600: 'hsl(205, 15%, 41%)',
-          700: 'hsl(205, 20%, 32%)',
-          800: 'hsl(205, 25%, 23%)',
-          900: 'hsl(205, 30%, 15%)'
-        },
-        primary: {
-          50: 'hsl(195, 90%, 94%)',
-          100: 'hsl(195, 88%, 86%)',
-          200: 'hsl(195, 86%, 77%)',
-          300: 'hsl(195, 84%, 68%)',
-          400: 'hsl(195, 82%, 59%)',
-          500: 'hsl(195, 80%, 50%)',
-          600: 'hsl(195, 85%, 41%)',
-          700: 'hsl(195, 90%, 32%)',
-          800: 'hsl(195, 95%, 23%)',
-          900: 'hsl(195, 100%, 15%)'
-        },
-        black: '#000',
-        white: '#fff',
-        amber: {
-          50: '#fff8e1',
-          100: '#ffecb3',
-          200: '#ffe082',
-          300: '#ffd54f',
-          400: '#ffca28',
-          500: '#ffc107',
-          600: '#ffb300',
-          700: '#ffa000',
-          800: '#ff8f00',
-          900: '#ff6f00'
-        },
-        green: {
-          50: '#e8f5e9',
-          100: '#c8e6c9',
-          200: '#a5d6a7',
-          300: '#81c784',
-          400: '#66bb6a',
-          500: '#4caf50',
-          600: '#43a047',
-          700: '#388e3c',
-          800: '#2e7d32',
-          900: '#1b5e20'
-        },
-        red: {
-          50: '#ffebee',
-          100: '#ffcdd2',
-          200: '#ef9a9a',
-          300: '#e57373',
-          400: '#ef5350',
-          500: '#f44336',
-          600: '#e53935',
-          700: '#d32f2f',
-          800: '#c62828',
-          900: '#b71c1c'
-        }
+      minWidth: {
+        '30%': '30%',
+        '15%': '15%',
       }
-    }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require("daisyui")
+  ],
+  daisyui: {
+    themes: [
+      {
+        dark: {
+          "color-scheme": "dark",
+          "primary": "#38bdf8",
+          "secondary": "#818CF8",
+          "accent": "#F471B5",
+          "neutral": "#1E293B",
+          "neutral-focus": "#273449",
+          "base-100": "#0F172A",
+          "info": "#0CA5E9",
+          "info-content": "#000000",
+          "success": "#2DD4BF",
+          "warning": "#F4BF50",
+          "error": "#FB7085",
+        }
+      },
+      {
+        light: {
+          "color-scheme": "light",
+          "primary": "#570df8",
+          "secondary": "#f000b8",
+          "accent": "#c4b5fd",
+          "neutral": "#2b3440",
+          "base-100": "#e0f2fe",
+          "info": "#3abff8",
+          "success": "#36d399",
+          "warning": "#fbbd23",
+          "error": "#f87272",
+        },
+      }
+    ]
+  }
 }
-

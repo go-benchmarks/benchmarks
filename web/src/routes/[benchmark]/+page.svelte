@@ -2,12 +2,16 @@
     import type {PageData} from './$types';
     import {page} from '$app/stores';
     import {
-        type Benchmark, type BenchmarkGroup,
-        convertBenchmarksToLineChartData,
-        getBarChartDataByCPUCount, getBarChartDataByRuns,
+        type Benchmark,
+        type BenchmarkGroup,
+        convertBenchmarksToCPUCountPerformanceLineChart,
+        convertBenchmarksToRunCountPerformanceLineChart,
+        filterBenchmarkByVariationName,
+        getBarChartDataByCPUCountMulti,
+        getBarChartDataByRunsMulti,
         getBarChartDataByVariation,
         getBarChartDataByVariationAndRunCount,
-        getBenchmarkGroups,
+        getBenchmarkGroups, getChartDataByCPUCount, getChartDataByRuns,
         getLineChartOptions,
     } from "$lib/model";
     import {Bar, Line} from "svelte-chartjs";
@@ -26,14 +30,16 @@
     const uniqueVariationNamesString = uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(0, -1).join(", ") + " and " + uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(-1);
 </script>
 
-<div class="text-red-600 text-8xl">
+<div>
     <hgroup>
         <h2>Comparison</h2>
         <p>This site compares the performance of <code>{benchmarkGroup.Name}</code> implementations with the
             functions: {@html uniqueVariationNamesString}</p>
     </hgroup>
-    <Bar height="{50}" options="{getLineChartOptions()}" data="{getBarChartDataByRuns(benchmarks)}"/>
-    <Bar height="{50}" options="{getLineChartOptions()}" data="{getBarChartDataByCPUCount(benchmarks)}"/>
+    <h3>Different Run Count</h3>
+    <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByRunsMulti(benchmarks)}"/>
+    <h3>Different CPU Core Count</h3>
+    <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByCPUCountMulti(benchmarks)}"/>
 
     <hgroup>
         <h3>Different Run Count</h3>
@@ -41,7 +47,7 @@
     </hgroup>
     {#each uniqueVariationNames as vari}
         <h4>{vari}</h4>
-        <Bar height="{50}" options="{getLineChartOptions()}" data="{getBarChartDataByVariationAndRunCount(benchmarks, vari)}"/>
+        <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByVariationAndRunCount(benchmarks, vari)}"/>
     {/each}
 
 
@@ -51,7 +57,7 @@
     </hgroup>
     {#each uniqueVariationNames as vari}
         <h4>{vari}</h4>
-        <Bar height="{50}" options="{getLineChartOptions()}" data="{getBarChartDataByVariation(benchmarks, vari)}"/>
+        <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByVariation(benchmarks, vari)}"/>
     {/each}
 
 
@@ -69,7 +75,14 @@
     {#each benchmarks as benchmark}
         <section id="{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">
             <h3>{benchmark.Name}</h3>
-            <Line height={50} options="{getLineChartOptions()}" data="{convertBenchmarksToLineChartData([benchmark])}"/>
+
+            {#each uniqueVariationNames as vari}
+                <h4>{vari}</h4>
+                <h5>By Run Count</h5>
+                <Line height="{50}" options="{getLineChartOptions(false)}" data="{getChartDataByRuns(filterBenchmarkByVariationName(benchmark, vari))}"/>
+                <h5>By CPU Core Count</h5>
+                <Line height="{50}" options="{getLineChartOptions(false)}" data="{getChartDataByCPUCount(filterBenchmarkByVariationName(benchmark, vari))}"/>
+            {/each}
         </section>
     {/each}
 </div>
