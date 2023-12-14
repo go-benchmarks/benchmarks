@@ -1,5 +1,4 @@
 <script lang="ts">
-    import type {PageData} from './$types';
     import {page} from '$app/stores';
     import {
         type Benchmark,
@@ -18,10 +17,13 @@
     import {pageTitle} from "$lib/store";
     import Chart from "chart.js/auto";
 
-    export let data: PageData;
-
     const benchmarkSlug = $page.params.benchmark;
     const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name === benchmarkSlug)[0];
+
+    if (!benchmarkGroup) {
+        throw new Error(`Benchmark Group ${benchmarkSlug} not found`);
+    }
+
     $pageTitle = benchmarkGroup.Name;
 
     let benchmarks: Benchmark[] = benchmarkGroup.Benchmarks;
