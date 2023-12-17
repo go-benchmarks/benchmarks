@@ -24,7 +24,7 @@
                     <h2 class="card-title"><a href="/{group.Name.toLowerCase().replaceAll(' ', '-')}">{group.Name}</a>
                     </h2>
                     <div>
-                        <p>{group.Headline}</p>
+                        <p>{@html group.Headline}</p>
                         {#if group.Benchmarks.length > 1}
                             <h3 class="header">Implementations:</h3>
                             <ul>
