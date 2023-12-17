@@ -1,9 +1,16 @@
 package parser
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"github.com/go-benchmarks/benchmarks/cmd/internal/utils"
+	"github.com/go-benchmarks/benchmarks/cmd/logger"
+	"github.com/goccy/go-yaml"
+	"go/ast"
+	"go/parser"
+	"go/printer"
+	"go/token"
 	"golang.org/x/tools/benchmark/parse"
 	"log/slog"
 	"os"
@@ -33,8 +40,6 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 
 		var benchmarkGroup BenchmarkGroup
 
-		benchmarkGroup.Name = filepath.Base(path)
-
 		f, err := os.Open(path + string(os.PathSeparator) + "output.bench")
 		if err != nil {
 			return fmt.Errorf("failed to open benchmarkGroup file: %w", err)
@@ -44,6 +49,63 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 		if err != nil {
 			return fmt.Errorf("failed to parse benchmarkGroup file: %w", err)
 		}
+
+		// Init BenchmarkMeta
+		var meta BenchmarkMeta
+		meta.Name = filepath.Base(path)
+
+		// Check if _meta.yaml exists
+		metaFilePath := path + string(os.PathSeparator) + "_meta.yaml"
+		if _, err := os.Stat(metaFilePath); err == nil {
+			logger.Debug("meta file exists", "path", metaFilePath)
+
+			// Open meta file
+			metaFile, err := os.Open(metaFilePath)
+			if err != nil {
+				return fmt.Errorf("failed to open meta file: %w", err)
+			}
+
+			// Decode meta file
+			err = yaml.NewDecoder(metaFile).Decode(&meta)
+			if err != nil {
+				return fmt.Errorf("failed to decode meta file: %w", err)
+			}
+		} else {
+			logger.Warn("no meta file found", "path", metaFilePath)
+		}
+
+		// Get all *_test.go files
+		err = filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
+			if strings.HasSuffix(path, ".go") {
+				logger.Debug("found test file", "path", path)
+
+				// Read test file
+				b, err := os.ReadFile(path)
+				if err != nil {
+					return fmt.Errorf("failed to read test file: %w", err)
+				}
+
+				cC, err := cleanCode(string(b))
+				if err != nil {
+					return fmt.Errorf("failed to clean test file: %w", err)
+				}
+
+				benchmarkGroup.Code += cC
+
+				consts, err := getConsts(string(b))
+				if err != nil {
+					return fmt.Errorf("failed to get consts: %w", err)
+				}
+
+				benchmarkGroup.Constants += consts
+			}
+
+			return nil
+		})
+
+		benchmarkGroup.Name = meta.Name
+		benchmarkGroup.Description = meta.Description
+		benchmarkGroup.Headline = meta.Headline
 
 		var variations []Variation
 		for s, i := range set {
@@ -79,7 +141,7 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 				variation.Name = strings.ToUpper(variation.Name)
 
 				// Split name. "BenchmarkName" -> "BenchmarkGroup Name". Split happens at every uppercase letter.
-				variation.Benchmark.Name = strings.Join(utils.SplitCamelCase(variation.Benchmark.Name)[2:], " ")
+				variation.Benchmark.Name = strings.Join(utils.SplitCamelCase(variation.Benchmark.Name)[1:], " ")
 				logger.Debug("adding benchmark variation", "benchmark name", variation.Benchmark.Name, "variation name", variation.Name, "cpuCount", variation.CPUCount, "orig name", s)
 
 				// Calculate ops per second by dividing ns/op by 1e9.
@@ -102,6 +164,18 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 			benchmark.Name = name
 			benchmark.Variations = variations
 
+			for _, m := range meta.Meta {
+				if m.Implementation == name {
+					benchmark.Description = m.Description
+				}
+			}
+
+			logger.Debug("getting benchmark code", "benchmark name", name)
+			benchmark.Code, err = getBenchmarkCode(benchmarkGroup.Code, strings.ReplaceAll(name, " ", ""))
+			if err != nil {
+				return fmt.Errorf("failed to get benchmark code: %w", err)
+			}
+
 			results = append(results, benchmark)
 		}
 
@@ -121,4 +195,100 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 	}
 
 	return groups, nil
+}
+
+func cleanCode(src string) (string, error) {
+	fset := token.NewFileSet()
+	file, err := parser.ParseFile(fset, "", src, parser.ParseComments)
+	if err != nil {
+		return "", err
+	}
+
+	var buf bytes.Buffer
+	for _, decl := range file.Decls {
+		switch decl := decl.(type) {
+		case *ast.GenDecl:
+			if decl.Tok == token.IMPORT {
+				continue
+			}
+		case *ast.FuncDecl:
+			if decl.Name.Name == "init" {
+				continue
+			}
+		}
+		printer.Fprint(&buf, fset, decl)
+		buf.WriteString("\n\n") // Add an additional newline character
+	}
+
+	return buf.String(), nil
+}
+
+func getConsts(src string) (string, error) {
+	fset := token.NewFileSet()
+	file, err := parser.ParseFile(fset, "", src, 0)
+	if err != nil {
+		return "", err
+	}
+
+	var buf bytes.Buffer
+	for _, decl := range file.Decls {
+		switch decl := decl.(type) {
+		case *ast.GenDecl:
+			if decl.Tok == token.CONST {
+				printer.Fprint(&buf, fset, decl)
+				buf.WriteString("\n\n") // Add an additional newline character
+			}
+		}
+	}
+
+	return buf.String(), nil
+}
+
+func getBenchmarkCode(src, name string) (string, error) {
+	fset := token.NewFileSet()
+	file, err := parser.ParseFile(fset, "", "package main\n"+src, parser.ParseComments)
+	if err != nil {
+		return "", err
+	}
+
+	var buf bytes.Buffer
+	ast.Inspect(file, func(n ast.Node) bool {
+		switch decl := n.(type) {
+		case *ast.GenDecl:
+			if decl.Tok == token.TYPE {
+				for _, spec := range decl.Specs {
+					typeSpec, ok := spec.(*ast.TypeSpec)
+					if ok && typeSpec.Name.Name == name {
+						printer.Fprint(&buf, fset, decl)
+						buf.WriteString("\n\n")
+					}
+				}
+			}
+		case *ast.FuncDecl:
+			if decl.Recv != nil && len(decl.Recv.List) > 0 {
+				var recvTypeName string
+
+				switch expr := decl.Recv.List[0].Type.(type) {
+				case *ast.StarExpr:
+					recvTypeName = expr.X.(*ast.Ident).Name
+				case *ast.Ident:
+					recvTypeName = expr.Name
+				}
+
+				if recvTypeName == name {
+					printer.Fprint(&buf, fset, decl)
+					buf.WriteString("\n\n")
+				}
+			} else if strings.HasPrefix(decl.Name.Name, "Benchmark"+name+"_") {
+				printer.Fprint(&buf, fset, decl)
+				buf.WriteString("\n\n")
+			}
+		case *ast.Comment, *ast.CommentGroup:
+			logger.New(true).Debug("comment", "comment")
+
+		}
+		return true
+	})
+
+	return buf.String(), nil
 }

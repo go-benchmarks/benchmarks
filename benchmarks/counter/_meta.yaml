@@ -1,0 +1,26 @@
+name: Counter
+headline: A benchmark to compare the performance of different counter implementations in Go.
+description: >
+  The classic counter is a simple integer, mostly increased by `i++`. This implementation works fine in the most cases, but it has some drawbacks.
+  One of them is that it is not thread-safe. If you want to use it in a concurrent environment, you have to use a mutex or a channel to synchronize the access.
+  A solution is to use atomics. There are different approaches to use atomics to make a counter thread-safe.
+  This benchmark shows which implementation is the fastest, in which use-case.
+
+tags:
+  - demo
+
+contributors:
+  - MarvinJWendt
+
+meta:
+  - implementation: Faster Over Time
+    description: >
+      This benchmark gets faster, the more runs it has.
+
+  - implementation: Slower Over Time
+    description: >
+      This benchmark gets slower, the more runs it has.
+
+  - implementation: Faster With More CPU Cores
+    description: >
+      This benchmark gets faster, the more CPU cores it has.

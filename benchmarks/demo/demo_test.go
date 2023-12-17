@@ -7,7 +7,7 @@ import (
 
 func BenchmarkSlowerOverTime_run(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		time.Sleep(time.Duration(i/100) * time.Nanosecond)
+		time.Sleep(time.Duration(i/50) * time.Nanosecond)
 	}
 }
 

@@ -2,23 +2,27 @@
     import {page} from '$app/stores';
     import {
         type Benchmark,
-        type BenchmarkGroup,
-        convertBenchmarksToCPUCountPerformanceLineChart,
-        convertBenchmarksToRunCountPerformanceLineChart,
         filterBenchmarkByVariationName,
         getBarChartDataByCPUCountMulti,
         getBarChartDataByRunsMulti,
         getBarChartDataByVariation,
         getBarChartDataByVariationAndRunCount,
-        getBenchmarkGroups, getChartDataByCPUCount, getChartDataByRuns,
+        getBenchmarkGroups,
+        getChartDataByCPUCount,
+        getChartDataByRuns,
         getLineChartOptions,
     } from "$lib/model";
     import {Bar, Line} from "svelte-chartjs";
     import {pageTitle} from "$lib/store";
-    import Chart from "chart.js/auto";
+    import "chart.js/auto";
+    import {onMount} from "svelte";
+
+    onMount(() => {
+        hljs.highlightAll();
+    });
 
     const benchmarkSlug = $page.params.benchmark;
-    const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name === benchmarkSlug)[0];
+    const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name.toLowerCase() === benchmarkSlug.toLowerCase())[0];
 
     if (!benchmarkGroup) {
         throw new Error(`Benchmark Group ${benchmarkSlug} not found`);
@@ -29,10 +33,27 @@
     let benchmarks: Benchmark[] = benchmarkGroup.Benchmarks;
 
     const uniqueVariationNames = benchmarks.flatMap(b => b.Variations).map(v => v.Name).filter((v, i, a) => a.indexOf(v) === i);
-    const uniqueVariationNamesString = uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(0, -1).join(", ") + " and " + uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(-1);
+
+
+    let uniqueVariationNamesString: string;
+    if (uniqueVariationNames.length === 1) {
+        uniqueVariationNamesString = `<code>${uniqueVariationNames[0]}</code>`;
+    } else {
+        uniqueVariationNamesString = uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(0, -1).join(", ") + " and " + uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(-1);
+    }
 </script>
 
+<svelte:head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</svelte:head>
+
 <div>
+    <b>Description:</b>
+    <p class="description">{benchmarkGroup.Description}</p>
+
     <hgroup>
         <h2>Comparison</h2>
         <p>This site compares the performance of <code>{benchmarkGroup.Name}</code> implementations with the
@@ -49,7 +70,8 @@
     </hgroup>
     {#each uniqueVariationNames as vari}
         <h4>{vari}</h4>
-        <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByVariationAndRunCount(benchmarks, vari)}"/>
+        <Bar height="{50}" options="{getLineChartOptions(true)}"
+             data="{getBarChartDataByVariationAndRunCount(benchmarks, vari)}"/>
     {/each}
 
 
@@ -63,34 +85,42 @@
     {/each}
 
 
-    <h2>Implementations</h2>
-    <aside>
-        <nav>
-            <ul>
-                {#each benchmarks as benchmark}
-                    <li><a href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a></li>
-                {/each}
-            </ul>
-        </nav>
-    </aside>
+    <h2 class="mt-64">Implementations</h2>
+    <nav class="mb-32">
+        <ul>
+            {#each benchmarks as benchmark}
+                <li><a class="link-hover text-blue-400 text-xl"
+                       href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a></li>
+            {/each}
+        </ul>
+    </nav>
 
     {#each benchmarks as benchmark}
         <section id="{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">
-            <h3 class="underline"><a href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a></h3>
+            <h3 class="underline"><a href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a>
+            </h3>
+            <p class="description">{benchmark.Description}</p>
+            <b>Code:</b>
+            <pre><code class="language-go">{benchmarkGroup.Constants}{benchmark.Code}</code></pre>
 
             {#each uniqueVariationNames as vari}
                 <h4>{vari}</h4>
                 <h5>By Run Count</h5>
-                <Line height="{50}" options="{getLineChartOptions(false)}" data="{getChartDataByRuns(filterBenchmarkByVariationName(benchmark, vari))}"/>
+                <Line height="{50}" options="{getLineChartOptions(false)}"
+                      data="{getChartDataByRuns(filterBenchmarkByVariationName(benchmark, vari))}"/>
                 <h5>By CPU Core Count</h5>
-                <Line height="{50}" options="{getLineChartOptions(false)}" data="{getChartDataByCPUCount(filterBenchmarkByVariationName(benchmark, vari))}"/>
+                <Line height="{50}" options="{getLineChartOptions(false)}"
+                      data="{getChartDataByCPUCount(filterBenchmarkByVariationName(benchmark, vari))}"/>
             {/each}
         </section>
     {/each}
+
+    <h2>Full Benchmark Code</h2>
+    <pre><code class="language-go">{benchmarkGroup.Code}</code></pre>
 </div>
 
 <style lang="scss">
-    aside {
-        @apply text-center;
-    }
+  .description {
+    @apply max-w-3xl;
+  }
 </style>

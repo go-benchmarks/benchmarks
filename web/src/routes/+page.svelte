@@ -11,10 +11,10 @@
 <section>
     <div class="flex flex-wrap gap-8">
         {#each benchmarkGroups as group}
-            <a href="/{group.Name}"
+            <a href="/{group.Name.toLowerCase()}"
                class="card w-1/4 flex-grow card-compact bg-base-200 border-1 border-black card-bordered shadow-md">
                 <div class="card-body">
-                    <h2 class="card-title"><a href="/{group.Name}">{group.Name}</a></h2>
+                    <h2 class="card-title"><a href="/{group.Name.toLowerCase()}">{group.Name}</a></h2>
                     <h3>Functions:</h3>
                     <ul>
                         {#each Array.from(new Set(group.Benchmarks[0].Variations.map(v => v.Name))) as v}

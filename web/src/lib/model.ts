@@ -4,13 +4,17 @@ export type BenchmarkGroups = BenchmarkGroup[]
 
 export interface BenchmarkGroup {
     Name: string
+    Headline: string
     Description: string
     Benchmarks: Benchmark[]
+    Code: string
+    Constants: string
 }
 
 export interface Benchmark {
     Name: string
     Description: string
+    Code: string
     Variations: Variation[]
 }
 

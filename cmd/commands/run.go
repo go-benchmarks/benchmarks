@@ -54,7 +54,7 @@ func runBenchmark(logger *slog.Logger, path string) error {
 
 	logger.Debug("cpu tests", "cpuTests", cpuTests)
 
-	benchtimes := []string{"1000x", "2000x", "3000x", "4000x", "5000x", "10000x", "50000x", "100000x"}
+	benchtimes := []string{"1000x", "2000x", "3000x", "4000x", "5000x", "6000x", "7000x", "8000x", "9000x", "10000x"}
 	var output []byte
 	for _, benchtime := range benchtimes {
 		cmd := exec.Command("go", "test", "-bench", ".", "-benchmem", "-benchtime", benchtime, "-cpu", strings.Join(cpuTests, ","))
