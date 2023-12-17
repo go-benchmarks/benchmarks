@@ -226,16 +226,18 @@ func getConsts(src string) (string, error) {
 	}
 
 	var buf bytes.Buffer
+	newFile := &dst.File{}
 	for _, decl := range file.Decls {
 		switch decl := decl.(type) {
 		case *dst.GenDecl:
 			if decl.Tok == token.CONST {
-				decorator.Fprint(&buf, file)
-				buf.WriteString("\n\n") // Add an additional newline character
+				newFile.Decls = append(newFile.Decls, decl)
 			}
 		}
 	}
 
+	newFile.Name = dst.NewIdent("dummy")
+	decorator.Fprint(&buf, newFile)
 	return cleanCode(buf.String())
 }
 
