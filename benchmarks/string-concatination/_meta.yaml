@@ -6,6 +6,7 @@ description: >
   One of them is that it is not very fast.
   A solution is to use the `strings.Builder` or `buffer.Bytes` type.
   This benchmark shows which implementation is the fastest, in which use-case.
+  For every run, the final string is increased by the same string. This makes sure, that the final string increases over time, to visualize the performance differences.
 
 tags:
   - string

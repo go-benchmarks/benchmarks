@@ -2,239 +2,239 @@ goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    1000	       259.7 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    1000	       386.5 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    1000	       358.2 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    1000	       298.0 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    1000	       234.7 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    1000	       341.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    1000	    781465 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    1000	     23839 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    1000	     21408 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    1000	     22397 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    1000	     21778 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    1000	     23605 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    1000	     11061 ns/op	     624 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    1000	     10886 ns/op	     209 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    1000	     10808 ns/op	     221 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    1000	     10842 ns/op	     155 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    1000	     11072 ns/op	     225 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    1000	     11006 ns/op	     196 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    1000	       276.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    1000	       303.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    1000	       326.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    1000	       386.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    1000	       243.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    1000	       244.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    1000	    783140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    1000	     21513 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    1000	     21770 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    1000	     22478 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    1000	     23201 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    1000	     20435 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    1000	     11166 ns/op	     627 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    1000	     10879 ns/op	     194 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    1000	     10775 ns/op	     190 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    1000	     10801 ns/op	     193 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    1000	     10801 ns/op	     197 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    1000	     10776 ns/op	     211 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.046s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.043s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    2000	       268.7 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    2000	       447.0 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    2000	       328.7 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    2000	       389.5 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    2000	       337.2 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    2000	       303.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    2000	    392322 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    2000	     11117 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    2000	     10599 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    2000	     11276 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    2000	     11078 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    2000	     10586 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    2000	      6137 ns/op	     625 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    2000	      5695 ns/op	     200 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    2000	      5524 ns/op	     206 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    2000	      5811 ns/op	     186 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    2000	      5771 ns/op	     193 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    2000	      5961 ns/op	     216 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    2000	       253.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    2000	       430.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    2000	       350.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    2000	       306.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    2000	       345.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    2000	       298.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    2000	    391575 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    2000	     10716 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    2000	     11924 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    2000	     10786 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    2000	     12660 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    2000	     10922 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    2000	      6862 ns/op	     613 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    2000	      5699 ns/op	     187 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    2000	      5491 ns/op	     157 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    2000	      5853 ns/op	     176 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    2000	      5981 ns/op	     164 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    2000	      6004 ns/op	     253 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.054s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.059s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    3000	       279.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    3000	       402.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    3000	       284.9 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    3000	       313.5 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    3000	       303.2 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    3000	       329.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    3000	    261720 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    3000	      8483 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    3000	      8737 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    3000	      7370 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    3000	      7800 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    3000	      7512 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    3000	      4843 ns/op	     622 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    3000	      4002 ns/op	     200 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    3000	      3976 ns/op	     210 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    3000	      4141 ns/op	     188 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    3000	      4170 ns/op	     170 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    3000	      4502 ns/op	     211 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    3000	       264.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    3000	       436.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    3000	       392.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    3000	       308.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    3000	       348.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    3000	       318.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    3000	    258987 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    3000	      7118 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    3000	      7230 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    3000	      8247 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    3000	      7154 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    3000	      8051 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    3000	      4469 ns/op	     613 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    3000	      3962 ns/op	     180 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    3000	      3907 ns/op	     203 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    3000	      4143 ns/op	     165 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    3000	      4270 ns/op	     193 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    3000	      4259 ns/op	     210 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.076s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.060s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    4000	       253.1 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    4000	      1726 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    4000	       981.8 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    4000	      1713 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    4000	      1847 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    4000	      1775 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    4000	    197222 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    4000	      5955 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    4000	      5290 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    4000	      5241 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    4000	      5625 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    4000	      6078 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    4000	      3622 ns/op	     622 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    4000	      3149 ns/op	     206 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    4000	      3175 ns/op	     153 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    4000	      3362 ns/op	     181 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    4000	      3480 ns/op	     188 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    4000	      3579 ns/op	     185 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    4000	       253.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    4000	      1097 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    4000	      1497 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    4000	      1357 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    4000	      1421 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    4000	      1534 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    4000	    196414 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    4000	      5918 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    4000	      6232 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    4000	      5330 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    4000	      5510 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    4000	      6104 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    4000	      4030 ns/op	     608 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    4000	      3160 ns/op	     205 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    4000	      3067 ns/op	     195 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    4000	      3198 ns/op	     189 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    4000	      3564 ns/op	     195 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    4000	      3430 ns/op	     170 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.107s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.102s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    5000	       256.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    5000	      3521 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    5000	      3934 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    5000	      4041 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    5000	      3710 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    5000	      4434 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    5000	    158269 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    5000	      4297 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    5000	      4115 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    5000	      4431 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    5000	      4421 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    5000	      4263 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    5000	      3520 ns/op	     604 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    5000	      2612 ns/op	     178 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    5000	      2735 ns/op	     217 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    5000	      2761 ns/op	     187 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    5000	      2955 ns/op	     189 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    5000	      3033 ns/op	     185 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    5000	       261.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    5000	      4091 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    5000	      4455 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    5000	      4013 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    5000	      3607 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    5000	      3458 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    5000	    156735 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    5000	      4389 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    5000	      4629 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    5000	      4135 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    5000	      4860 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    5000	      4241 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    5000	      3127 ns/op	     607 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    5000	      2814 ns/op	     186 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    5000	      2558 ns/op	     207 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    5000	      2767 ns/op	     189 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    5000	      3013 ns/op	     183 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    5000	      3192 ns/op	     200 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.178s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.172s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    6000	     76141 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    6000	      5538 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    6000	      6187 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    6000	      6320 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    6000	      5855 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    6000	      6301 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    6000	    130860 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    6000	      3668 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    6000	      3726 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    6000	      3920 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    6000	      3516 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    6000	      3764 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    6000	      3248 ns/op	     621 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    6000	      2320 ns/op	     171 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    6000	      2449 ns/op	     196 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    6000	      2546 ns/op	     169 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    6000	      2863 ns/op	     188 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    6000	      3037 ns/op	     210 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    6000	     68223 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    6000	      5633 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    6000	      6306 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    6000	      5634 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    6000	      5583 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    6000	      6108 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    6000	    131193 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    6000	      3605 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    6000	      3777 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    6000	      3910 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    6000	      3724 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    6000	      3721 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    6000	      3523 ns/op	     639 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    6000	      2365 ns/op	     187 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    6000	      2300 ns/op	     187 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    6000	      2450 ns/op	     177 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    6000	      2772 ns/op	     189 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    6000	      3005 ns/op	     199 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.726s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	1.675s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    7000	    143245 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    7000	      8355 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    7000	      7913 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    7000	      7790 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    7000	      7106 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    7000	      7176 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    7000	    112378 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    7000	      3517 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    7000	      3158 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    7000	      2894 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    7000	      3087 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    7000	      2998 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    7000	      3463 ns/op	     606 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    7000	      2224 ns/op	     163 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    7000	      2180 ns/op	     203 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    7000	      2144 ns/op	     182 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    7000	      2519 ns/op	     190 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    7000	      2665 ns/op	     189 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    7000	    139562 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    7000	      7464 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    7000	      7491 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    7000	      7613 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    7000	      7400 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    7000	      7482 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    7000	    110328 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    7000	      3301 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    7000	      3168 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    7000	      2969 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    7000	      3366 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    7000	      3235 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    7000	      3477 ns/op	     602 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    7000	      2035 ns/op	     156 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    7000	      1966 ns/op	     192 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    7000	      2225 ns/op	     194 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    7000	      2328 ns/op	     185 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    7000	      2755 ns/op	     190 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	2.368s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	2.322s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    8000	    182441 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    8000	      8887 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    8000	      8707 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    8000	      8845 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    8000	      8531 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    8000	      8593 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    8000	     97461 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    8000	      2714 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    8000	      2833 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    8000	      2824 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    8000	      2622 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    8000	      2994 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    8000	      3318 ns/op	     626 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    8000	      1869 ns/op	     170 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    8000	      1787 ns/op	     171 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    8000	      2037 ns/op	     175 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    8000	      2205 ns/op	     177 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    8000	      2723 ns/op	     194 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    8000	    193340 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    8000	      8430 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    8000	      9034 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    8000	      9025 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    8000	      8352 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    8000	      7921 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    8000	     97240 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    8000	      2738 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    8000	      2708 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    8000	      2787 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    8000	      2597 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    8000	      2674 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    8000	      3336 ns/op	     616 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    8000	      1985 ns/op	     153 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    8000	      1963 ns/op	     199 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    8000	      2107 ns/op	     188 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    8000	      2272 ns/op	     189 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    8000	      2666 ns/op	     195 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	2.909s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	2.987s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	    9000	    233986 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	    9000	      9601 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	    9000	      9413 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	    9000	      9105 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	    9000	      9525 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	    9000	      9590 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	    9000	     86851 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	    9000	      2563 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	    9000	      2404 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	    9000	      2355 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	    9000	      2294 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	    9000	      2545 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	    9000	      3183 ns/op	     613 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	    9000	      1718 ns/op	     190 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	    9000	      1858 ns/op	     182 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	    9000	      1810 ns/op	     168 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	    9000	      2069 ns/op	     187 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	    9000	      2369 ns/op	     187 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	    9000	    229041 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	    9000	     10253 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	    9000	      9581 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	    9000	      9824 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	    9000	      8833 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	    9000	      9257 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	    9000	     83292 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	    9000	      2228 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	    9000	      2402 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	    9000	      2558 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	    9000	      2435 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	    9000	      2301 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	    9000	      3225 ns/op	     611 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	    9000	      1775 ns/op	     172 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	    9000	      1782 ns/op	     155 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	    9000	      1931 ns/op	     168 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	    9000	      2054 ns/op	     174 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	    9000	      2592 ns/op	     194 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	3.638s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	3.572s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/demo
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkSlowerOverTime_run               	   10000	    259716 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-2             	   10000	     10222 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-4             	   10000	     10420 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-8             	   10000	      9576 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-16            	   10000	     10032 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSlowerOverTime_run-32            	   10000	      9692 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run               	   10000	     78825 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-2             	   10000	      2314 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-4             	   10000	      2124 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-8             	   10000	      2125 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-16            	   10000	      2116 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterOverTime_run-32            	   10000	      2294 ns/op	       0 B/op	       0 allocs/op
-BenchmarkFasterWithMoreCPUCores_run       	   10000	      3103 ns/op	     627 B/op	       3 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-2     	   10000	      1615 ns/op	     150 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-4     	   10000	      1639 ns/op	     159 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-8     	   10000	      1738 ns/op	     166 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-16    	   10000	      1921 ns/op	     177 B/op	       2 allocs/op
-BenchmarkFasterWithMoreCPUCores_run-32    	   10000	      2385 ns/op	     195 B/op	       2 allocs/op
+BenchmarkSlowerOverTime_run               	   10000	    261809 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-2             	   10000	      9841 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-4             	   10000	     11090 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-8             	   10000	      9866 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-16            	   10000	     10838 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSlowerOverTime_run-32            	   10000	      9482 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run               	   10000	     70372 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-2             	   10000	      2406 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-4             	   10000	      2277 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-8             	   10000	      2259 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-16            	   10000	      2088 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterOverTime_run-32            	   10000	      2191 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFasterWithMoreCPUCores_run       	   10000	      3272 ns/op	     635 B/op	       3 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-2     	   10000	      1874 ns/op	     183 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-4     	   10000	      1701 ns/op	     153 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-8     	   10000	      1765 ns/op	     188 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-16    	   10000	      2076 ns/op	     178 B/op	       2 allocs/op
+BenchmarkFasterWithMoreCPUCores_run-32    	   10000	      2442 ns/op	     188 B/op	       2 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	4.218s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/demo	4.188s

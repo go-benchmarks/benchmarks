@@ -207,7 +207,7 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 
 func cleanCode(src string) (string, error) {
 	// Remove import blocks and lines that start with "package"
-	re := regexp.MustCompile(`(?m)^import \([\s\S]*?\)\n|^package .*\n`)
+	re := regexp.MustCompile(`(?m)^import \([\s\S]*?\)\n|^import .*\n|^package .*\n`)
 	src = re.ReplaceAllString(src, "")
 
 	// Replace multiple consecutive newline characters with a single newline character

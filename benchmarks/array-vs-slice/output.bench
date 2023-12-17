@@ -1,0 +1,240 @@
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    1000	       300.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    1000	       290.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    1000	       343.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    1000	       276.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    1000	       433.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    1000	       276.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    1000	      3402 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    1000	      5670 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    1000	      5449 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    1000	      5688 ns/op	   25210 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    1000	      4965 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    1000	      5076 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    1000	      1540 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    1000	      1858 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    1000	      1936 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    1000	      2125 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    1000	      2308 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    1000	      2096 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.072s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    2000	       138.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    2000	       138.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    2000	       144.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    2000	       138.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    2000	       138.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    2000	       138.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    2000	      3635 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    2000	      4921 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    2000	      5628 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    2000	      5313 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    2000	      4668 ns/op	   25209 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    2000	      5060 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    2000	      1382 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    2000	      1839 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    2000	      1651 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    2000	      1762 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    2000	      1780 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    2000	      1560 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.107s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    3000	        95.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    3000	       112.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    3000	        92.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    3000	        95.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    3000	        97.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    3000	       127.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    3000	      3798 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    3000	      5191 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    3000	      5482 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    3000	      5343 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    3000	      4764 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    3000	      4605 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    3000	      1307 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    3000	      1739 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    3000	      1919 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    3000	      2010 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    3000	      1646 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    3000	      1515 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.147s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    4000	        97.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    4000	        70.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    4000	        77.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    4000	        69.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    4000	        71.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    4000	        69.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    4000	      3611 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    4000	      5824 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    4000	      5679 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    4000	      5366 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    4000	      5844 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    4000	      4986 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    4000	      1257 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    4000	      2059 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    4000	      2018 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    4000	      1939 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    4000	      1871 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    4000	      1728 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.201s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    5000	        64.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    5000	        56.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    5000	        71.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    5000	        55.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    5000	        57.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    5000	        55.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    5000	      3616 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    5000	      5348 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    5000	      5366 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    5000	      5259 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    5000	      4721 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    5000	      4787 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    5000	      1389 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    5000	      1770 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    5000	      1940 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    5000	      1951 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    5000	      1662 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    5000	      1642 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.228s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    6000	        46.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    6000	        52.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    6000	        46.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    6000	        52.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    6000	        46.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    6000	        59.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    6000	      3839 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    6000	      6460 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    6000	      6632 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    6000	      6746 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    6000	      5385 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    6000	      4983 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    6000	      1231 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    6000	      1979 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    6000	      2092 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    6000	      2094 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    6000	      1888 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    6000	      1821 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.302s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    7000	        39.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    7000	        39.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    7000	        41.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    7000	        39.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    7000	        39.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    7000	        39.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    7000	      3275 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    7000	      5245 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    7000	      5473 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    7000	      5368 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    7000	      4969 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    7000	      4524 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    7000	      1260 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    7000	      1628 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    7000	      1724 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    7000	      1924 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    7000	      1822 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    7000	      1611 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.302s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    8000	        34.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    8000	        34.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    8000	        35.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    8000	        34.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    8000	        34.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    8000	        54.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    8000	      3771 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    8000	      4982 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    8000	      4999 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    8000	      5151 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    8000	      4991 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    8000	      4746 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    8000	      1310 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    8000	      1827 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    8000	      1862 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    8000	      1872 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    8000	      1723 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    8000	      1660 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.342s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	    9000	        30.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	    9000	        30.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	    9000	        30.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	    9000	        30.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	    9000	        30.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	    9000	        30.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	    9000	      3575 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	    9000	      5174 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	    9000	      5708 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	    9000	      6231 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	    9000	      5077 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	    9000	      4811 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	    9000	      1263 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	    9000	      1913 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	    9000	      1830 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	    9000	      1850 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	    9000	      1700 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	    9000	      1689 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.399s
+goos: linux
+goarch: amd64
+pkg: github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice
+cpu: AMD Ryzen 9 3950X 16-Core Processor            
+BenchmarkArray_run                   	   10000	        28.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-2                 	   10000	        28.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-4                 	   10000	        30.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-8                 	   10000	        27.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-16                	   10000	        29.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkArray_run-32                	   10000	        28.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDynamicSlice_run            	   10000	      3248 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-2          	   10000	      5002 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-4          	   10000	      5240 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-8          	   10000	      5527 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-16         	   10000	      5259 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkDynamicSlice_run-32         	   10000	      5184 ns/op	   25208 B/op	      12 allocs/op
+BenchmarkPreallocatedSlice_run       	   10000	      1211 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-2     	   10000	      1866 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-4     	   10000	      1802 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-8     	   10000	      1872 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-16    	   10000	      1680 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkPreallocatedSlice_run-32    	   10000	      1608 ns/op	    8192 B/op	       1 allocs/op
+PASS
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/array-vs-slice	0.424s

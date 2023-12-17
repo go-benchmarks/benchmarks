@@ -55,8 +55,8 @@
     <section>
         <hgroup>
             <h1>Go {@html benchmarkGroup.Name} Benchmark</h1>
-            <p><a target="_blank" class="link text-blue-400"
-                  href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/{benchmarkGroup.Name.toLowerCase().replaceAll(' ', '-')}">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/{benchmarkGroup.Name.toLowerCase().replaceAll(' ', '-')}</a>
+            <p>
+                {@html benchmarkGroup.Headline}
             </p>
         </hgroup>
         <br/>
@@ -163,6 +163,10 @@
 </div>
 
 <style lang="scss">
+  hgroup > p {
+    @apply text-gray-400;
+  }
+
   .code-area {
     @apply my-6
   }
