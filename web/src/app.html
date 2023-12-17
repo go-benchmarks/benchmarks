@@ -1,12 +1,35 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+ <head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script defer data-domain="go-benchmarks.com" src="https://a.marvinjwendt.dev/js/script.js"></script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Visual comparison of different Go benchmarks">
+  <meta name="keywords" content="go, golang, benchmarks, performance">
+  <meta name="author" content="@MarvinJWendt">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://go-benchmarks.com/">
+  <meta property="og:title" content="Go Benchmarks">
+  <meta property="og:description" content="Visual comparison of different Go benchmarks">
+  <meta property="og:image" content="/assets/img/thumbnail.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://go-benchmarks.com/">
+  <meta property="twitter:title" content="Go Benchmarks">
+  <meta property="twitter:description" content="Visual comparison of different Go benchmarks">
+  <meta property="twitter:image" content="/assets/img/thumbnail.png">
+  <meta property="twitter:creator" content="@MarvinJWendt">
+  <meta property="twitter:site" content="@MarvinJWendt">
+
+  %sveltekit.head%
+ </head>
+ <body data-sveltekit-preload-data="hover">
+  <div style="display: contents">%sveltekit.body%</div>
+ </body>
 </html>

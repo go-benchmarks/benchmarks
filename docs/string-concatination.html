@@ -1,25 +1,48 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link href="./_app/immutable/assets/0.6d75f775.css" rel="stylesheet">
+ <head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script defer data-domain="go-benchmarks.com" src="https://a.marvinjwendt.dev/js/script.js"></script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Visual comparison of different Go benchmarks">
+  <meta name="keywords" content="go, golang, benchmarks, performance">
+  <meta name="author" content="@MarvinJWendt">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://go-benchmarks.com/">
+  <meta property="og:title" content="Go Benchmarks">
+  <meta property="og:description" content="Visual comparison of different Go benchmarks">
+  <meta property="og:image" content="/assets/img/thumbnail.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://go-benchmarks.com/">
+  <meta property="twitter:title" content="Go Benchmarks">
+  <meta property="twitter:description" content="Visual comparison of different Go benchmarks">
+  <meta property="twitter:image" content="/assets/img/thumbnail.png">
+  <meta property="twitter:creator" content="@MarvinJWendt">
+  <meta property="twitter:site" content="@MarvinJWendt">
+
+  
+		<link href="./_app/immutable/assets/0.78b3449a.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/5.4bc083bf.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.573b015a.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.68519e4d.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.5df75a75.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d1e2d08c.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.9317ae72.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.3ce86957.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.e5fae0c8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.c4fd6cad.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.97c8b905.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.b439386b.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.ba2faad0.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/5.608873d2.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.68fbee57.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/5.8bc44c3b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/model.5dee0adc.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.384b60b9.js"><title>Go String Concatination Benchmarks</title><!-- HEAD_svelte-1h6lihy_START --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" data-svelte-h="svelte-17pkiyc"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js" data-svelte-h="svelte-3hvm8e"></script><!-- HEAD_svelte-1h6lihy_END -->
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">  <nav class="navbar bg-base-100"><div class="navbar-start" data-svelte-h="svelte-ic2hr6"><div tabindex="0" role="button" class="btn btn-ghost btn-circle"><img alt="Go Benchmarks Logo" width="48" src="/favicon.png"></div> <a class="btn btn-ghost text-xl" href="/">Go Benchmarks</a></div> <div class="navbar-center" data-svelte-h="svelte-1aqhixz"></div> <div class="navbar-end"><label class="swap swap-flip text-3xl"><input id="theme-selector-ckb" type="checkbox"> <div data-set-theme="dark" class="swap-on" data-svelte-h="svelte-27oiw6">🌞</div> <div data-set-theme="light" class="swap-off" data-svelte-h="svelte-gxmo3s">🌚</div></label> <a href="https://github.com/go-benchmarks/benchmarks" class="contrast" aria-label="Go Benchmarks GitHub repository" data-svelte-h="svelte-1aibe8f"><svg class="icon svelte-12l45bv" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="32px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></div> </nav> <main class="min-h-screen svelte-eidddc"> <div><hgroup><h1>Go String Concatination Benchmark</h1> <p><a target="_blank" class="link text-blue-400" href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/string-concatination">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/string-concatination</a></p></hgroup> <br> <b data-svelte-h="svelte-m97jtc">Description:</b> <p class="description svelte-8jjkd2">The classic string concatination is done by using the `+` operator.  This implementation works fine in the most cases, but it has some drawbacks.  One of them is that it is not very fast.  A solution is to use the `strings.Builder` or `buffer.Bytes` type.  This benchmark shows which implementation is the fastest, in which use-case.</p> <hgroup><h2 data-svelte-h="svelte-1y6dpqn">Comparison</h2> <p>This site compares the performance of <code>String Concatination</code> implementations with the
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.fe219ec0.js"><title>Go String Concatination Benchmarks</title><!-- HEAD_svelte-1h6lihy_START --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" data-svelte-h="svelte-17pkiyc"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js" data-svelte-h="svelte-3hvm8e"></script><!-- HEAD_svelte-1h6lihy_END -->
+ </head>
+ <body data-sveltekit-preload-data="hover">
+  <div style="display: contents">  <nav class="navbar bg-base-100"><div class="navbar-start" data-svelte-h="svelte-ic2hr6"><div tabindex="0" role="button" class="btn btn-ghost btn-circle"><img alt="Go Benchmarks Logo" width="48" src="/favicon.png"></div> <a class="btn btn-ghost text-xl" href="/">Go Benchmarks</a></div> <div class="navbar-center" data-svelte-h="svelte-1aqhixz"></div> <div class="navbar-end"><label class="swap swap-flip text-3xl"><input id="theme-selector-ckb" type="checkbox"> <div data-set-theme="dark" class="swap-on" data-svelte-h="svelte-27oiw6">🌞</div> <div data-set-theme="light" class="swap-off" data-svelte-h="svelte-gxmo3s">🌚</div></label> <a href="https://github.com/go-benchmarks/benchmarks" class="contrast" aria-label="Go Benchmarks GitHub repository" data-svelte-h="svelte-1aibe8f"><svg class="icon svelte-12l45bv" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="32px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></div> </nav> <main class="min-h-screen svelte-eidddc"> <div><hgroup><h1>Go String Concatination Benchmark</h1> <p><a target="_blank" class="link text-blue-400" href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/string-concatination">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/string-concatination</a></p></hgroup> <br> <b data-svelte-h="svelte-m97jtc">Description:</b> <p class="description svelte-8jjkd2">The classic string concatination is done by using the `+` operator.  This implementation works fine in the most cases, but it has some drawbacks.  One of them is that it is not very fast.  A solution is to use the `strings.Builder` or `buffer.Bytes` type.  This benchmark shows which implementation is the fastest, in which use-case.</p> <hgroup><h2 data-svelte-h="svelte-1y6dpqn">Comparison</h2> <p>This site compares the performance of <code>String Concatination</code> implementations with the
             functions: <!-- HTML_TAG_START --><code>WRITE</code> and <code>READ</code><!-- HTML_TAG_END --></p></hgroup> <h3 data-svelte-h="svelte-qhi9an">Different Run Count</h3> <canvas height="50"></canvas> <h3 data-svelte-h="svelte-y0r3q5">Different CPU Core Count</h3> <canvas height="50"></canvas> <hgroup data-svelte-h="svelte-7qxmth"><h3>Different Run Count</h3> <p>Some algorithms get slower or faster over time. Especially when they populate the same data struct.</p></hgroup> <h4>WRITE</h4> <canvas height="50"></canvas><h4>READ</h4> <canvas height="50"></canvas> <hgroup data-svelte-h="svelte-p37agy"><h3>Different CPU Core Count</h3> <p>Some algorithms are influenced by the amount of cores a CPU has.</p></hgroup> <h4>WRITE</h4> <canvas height="50"></canvas><h4>READ</h4> <canvas height="50"></canvas> <h2 class="mt-64" data-svelte-h="svelte-1ap7n5u">Implementations</h2> <nav class="mb-32"><ul><li><a class="link-hover text-blue-400 text-xl" href="#append-to-slice-and-join">Append To Slice And Join</a></li><li><a class="link-hover text-blue-400 text-xl" href="#buffer">Buffer</a></li><li><a class="link-hover text-blue-400 text-xl" href="#simple-append">Simple Append</a></li><li><a class="link-hover text-blue-400 text-xl" href="#string-builder">String Builder</a></li></ul></nav> <section id="append-to-slice-and-join"><h3 class="underline"><a href="#append-to-slice-and-join">Append To Slice And Join</a></h3> <p class="description svelte-8jjkd2">This implementation uses the `append` function to append the strings to a slice.  After that, the `strings.Join` function is used to join the strings together.</p> <b data-svelte-h="svelte-ycrh9t">Code:</b> <pre><code class="language-go">const (
 	readCount = 10_000
 )
@@ -204,7 +227,7 @@ func BenchmarkStringBuilder_read(b *testing.B) {
 			
 			<script>
 				{
-					__sveltekit_d4rfxx = {
+					__sveltekit_apei3c = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -214,8 +237,8 @@ func BenchmarkStringBuilder_read(b *testing.B) {
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.573b015a.js"),
-						import("./_app/immutable/entry/app.3ce86957.js")
+						import("./_app/immutable/entry/start.68519e4d.js"),
+						import("./_app/immutable/entry/app.97c8b905.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
@@ -227,5 +250,5 @@ func BenchmarkStringBuilder_read(b *testing.B) {
 				}
 			</script>
 		</div>
-	</body>
+ </body>
 </html>
