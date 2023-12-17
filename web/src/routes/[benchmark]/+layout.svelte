@@ -1,7 +1,15 @@
 <script>
   import {pageTitle} from "$lib/store";
-  var slug = $pageTitle.toLowerCase().replaceAll(" ", "-");
+  let slug = $pageTitle.toLowerCase().replaceAll(" ", "-");
+
+  pageTitle.subscribe(value => {
+    slug = value.toLowerCase().replaceAll(" ", "-");
+  });
 </script>
+
+<svelte:head>
+    <title>Go {$pageTitle} Benchmarks</title>
+</svelte:head>
 
 
 <hgroup>
