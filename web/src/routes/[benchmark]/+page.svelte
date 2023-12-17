@@ -13,7 +13,6 @@
         getLineChartOptions,
     } from "$lib/model";
     import {Bar, Line} from "svelte-chartjs";
-    import {pageTitle} from "$lib/store";
     import "chart.js/auto";
     import {onMount} from "svelte";
     import hljs from "highlight.js/lib/core";
@@ -31,8 +30,6 @@
         throw new Error(`Benchmark Group ${benchmarkSlug} not found`);
     }
 
-    $pageTitle = benchmarkGroup.Name;
-
     let benchmarks: Benchmark[] = benchmarkGroup.Benchmarks;
 
     const uniqueVariationNames = benchmarks.flatMap(b => b.Variations).map(v => v.Name).filter((v, i, a) => a.indexOf(v) === i);
@@ -47,6 +44,7 @@
 </script>
 
 <svelte:head>
+    <title>Go {benchmarkGroup.Name} Benchmarks</title>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -54,6 +52,12 @@
 </svelte:head>
 
 <div>
+    <hgroup>
+        <h1>Go {benchmarkGroup.Name} Benchmark</h1>
+        <p><a target="_blank" class="link text-blue-400" href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/{benchmarkGroup.Name.toLowerCase().replaceAll(' ', '-')}">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/{benchmarkGroup.Name.toLowerCase().replaceAll(' ', '-')}</a>
+        </p>
+    </hgroup>
+    <br/>
     <b>Description:</b>
     <p class="description">{benchmarkGroup.Description}</p>
 
