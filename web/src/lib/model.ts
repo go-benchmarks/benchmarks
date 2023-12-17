@@ -1,4 +1,5 @@
 import j from "../../../benchmarks.json"
+import showdown from "showdown"
 
 export type BenchmarkGroups = BenchmarkGroup[]
 
@@ -14,6 +15,7 @@ export interface BenchmarkGroup {
 export interface Benchmark {
     Name: string
     Description: string
+    BenchmarkCode: string
     Code: string
     Variations: Variation[]
 }
@@ -34,7 +36,23 @@ export interface Variation {
 
 // getBenchmarkGroups returns the benchmark groups from the JSON file.
 export function getBenchmarkGroups(): BenchmarkGroups {
-    return j
+    let benchmarkGroups: BenchmarkGroups = j;
+
+    // Convert markdown to HTML
+    benchmarkGroups.forEach(benchmarkGroup => {
+        benchmarkGroup.Headline = markdownToHtml(benchmarkGroup.Headline);
+        benchmarkGroup.Description = markdownToHtml(benchmarkGroup.Description);
+        benchmarkGroup.Benchmarks.forEach(benchmark => {
+            benchmark.Description = markdownToHtml(benchmark.Description);
+        });
+    });
+
+    return benchmarkGroups;
+}
+
+function markdownToHtml(md: string): string {
+    let converter = new showdown.Converter();
+    return converter.makeHtml(md);
 }
 
 export function convertBenchmarksToCPUCountPerformanceLineChart(benchmarks: Benchmark[]) {

@@ -27,3 +27,7 @@ h4 {
 h5 {
   @apply text-xl font-bold mb-4 mt-6;
 }
+
+code {
+  @apply bg-gray-800 rounded px-2 mx-0.5 py-0.5;
+}

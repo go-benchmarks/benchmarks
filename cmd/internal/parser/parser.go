@@ -139,8 +139,6 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 					}
 				}
 
-				variation.Name = strings.ToUpper(variation.Name)
-
 				// Split name. "BenchmarkName" -> "BenchmarkGroup Name". Split happens at every uppercase letter.
 				variation.Benchmark.Name = strings.Join(utils.SplitCamelCase(variation.Benchmark.Name)[1:], " ")
 				logger.Debug("adding benchmark variation", "benchmark name", variation.Benchmark.Name, "variation name", variation.Name, "cpuCount", variation.CPUCount, "orig name", s)
@@ -171,13 +169,20 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 				}
 			}
 
+			logger.Debug("getting code", "benchmark name", name)
+			benchmark.Code, err = getCode(benchmarkGroup.Code, strings.ReplaceAll(name, " ", ""))
+			if err != nil {
+				return fmt.Errorf("failed to get benchmark code: %w", err)
+			}
+
 			logger.Debug("getting benchmark code", "benchmark name", name)
-			benchmark.Code, err = getBenchmarkCode(benchmarkGroup.Code, strings.ReplaceAll(name, " ", ""))
+			benchmark.BenchmarkCode, err = getBenchmarkCode(benchmarkGroup.Code, strings.ReplaceAll(name, " ", ""))
 			if err != nil {
 				return fmt.Errorf("failed to get benchmark code: %w", err)
 			}
 
 			benchmark.Code = strings.TrimSpace(benchmark.Code)
+			benchmark.BenchmarkCode = strings.TrimSpace(benchmark.BenchmarkCode)
 
 			results = append(results, benchmark)
 		}
@@ -257,6 +262,35 @@ func getBenchmarkCode(src, name string) (string, error) {
 	newFile := &dst.File{}
 	dst.Inspect(file, func(n dst.Node) bool {
 		switch decl := n.(type) {
+		case *dst.FuncDecl:
+			if strings.HasPrefix(decl.Name.Name, "Benchmark"+name+"_") {
+				newFile.Decls = append(newFile.Decls, decl)
+			}
+		}
+		return true
+	})
+
+	newFile.Name = dst.NewIdent("dummy")
+	decorator.Fprint(&buf, newFile)
+	return cleanCode(buf.String())
+}
+
+func getCode(src, name string) (string, error) {
+	src, _ = cleanCode(src)
+	src = "package dummy\n\n" + src
+	file, err := decorator.Parse(src)
+	if err != nil {
+		return "", err
+	}
+
+	if file == nil {
+		return "", fmt.Errorf("parsed file is nil")
+	}
+
+	var buf bytes.Buffer
+	newFile := &dst.File{}
+	dst.Inspect(file, func(n dst.Node) bool {
+		switch decl := n.(type) {
 		case *dst.GenDecl:
 			if decl.Tok == token.TYPE {
 				for _, spec := range decl.Specs {
@@ -282,8 +316,6 @@ func getBenchmarkCode(src, name string) (string, error) {
 				if recvTypeName == name {
 					newFile.Decls = append(newFile.Decls, decl)
 				}
-			} else if strings.HasPrefix(decl.Name.Name, "Benchmark"+name+"_") {
-				newFile.Decls = append(newFile.Decls, decl)
 			}
 		}
 		return true

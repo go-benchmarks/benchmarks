@@ -12,10 +12,11 @@ type BenchmarkGroup struct {
 }
 
 type Benchmark struct {
-	Name        string // Name of the benchmark
-	Description string // Description of the benchmark
-	Code        string
-	Variations  []Variation
+	Name          string // Name of the benchmark
+	Description   string // Description of the benchmark
+	BenchmarkCode string
+	Code          string
+	Variations    []Variation
 }
 
 type Variation struct {
