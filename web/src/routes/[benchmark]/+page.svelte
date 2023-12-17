@@ -51,7 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
 </svelte:head>
 
-<div>
+<div class="px-8 sm:px-0">
     <section>
         <hgroup>
             <h1>Go {@html benchmarkGroup.Name} Benchmark</h1>
