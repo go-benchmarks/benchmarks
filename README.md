@@ -6,3 +6,7 @@
 # Go Benchmarks
 
 > Visual comparison of different Go benchmarks
+
+## Website
+
+See all the benchmarks here: [go-benchmarks.com](https://go-benchmarks.com)
