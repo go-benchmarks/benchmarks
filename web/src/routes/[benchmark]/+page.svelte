@@ -16,8 +16,11 @@
     import {pageTitle} from "$lib/store";
     import "chart.js/auto";
     import {onMount} from "svelte";
+    import hljs from "highlight.js/lib/core";
+    import * as goLang from "highlight.js/lib/languages/go";
 
     onMount(() => {
+        hljs.registerLanguage('go', goLang.default);
         hljs.highlightAll();
     });
 
