@@ -182,6 +182,7 @@ export function convertBenchmarksToRunCountPerformanceLineChart(benchmarks: Benc
 
 export function getLineChartOptions(isLogarithmic: boolean) {
     return {
+        responsive: true,
         plugins: {
             tooltip: {
                 callbacks: {
@@ -212,6 +213,7 @@ export function getLineChartOptions(isLogarithmic: boolean) {
         }
     }
 }
+
 export function getBarChartDataByCPUCountMulti(benchmarks: Benchmark[]) {
     // Make copy of benchmarks
     benchmarks = JSON.parse(JSON.stringify(benchmarks));
