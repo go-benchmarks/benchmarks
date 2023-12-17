@@ -4,17 +4,16 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/dave/dst"
+	"github.com/dave/dst/decorator"
 	"github.com/go-benchmarks/benchmarks/cmd/internal/utils"
-	"github.com/go-benchmarks/benchmarks/cmd/logger"
 	"github.com/goccy/go-yaml"
-	"go/ast"
-	"go/parser"
-	"go/printer"
 	"go/token"
 	"golang.org/x/tools/benchmark/parse"
 	"log/slog"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -103,6 +102,8 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 			return nil
 		})
 
+		benchmarkGroup.Code = strings.TrimSpace(benchmarkGroup.Code)
+
 		benchmarkGroup.Name = meta.Name
 		benchmarkGroup.Description = meta.Description
 		benchmarkGroup.Headline = meta.Headline
@@ -176,6 +177,8 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 				return fmt.Errorf("failed to get benchmark code: %w", err)
 			}
 
+			benchmark.Code = strings.TrimSpace(benchmark.Code)
+
 			results = append(results, benchmark)
 		}
 
@@ -198,34 +201,26 @@ func ProcessBenchmarkGroups(logger *slog.Logger, benchmarksDir string) (groups [
 }
 
 func cleanCode(src string) (string, error) {
-	fset := token.NewFileSet()
-	file, err := parser.ParseFile(fset, "", src, parser.ParseComments)
-	if err != nil {
-		return "", err
+	// Remove import blocks and lines that start with "package"
+	re := regexp.MustCompile(`(?m)^import \([\s\S]*?\)\n|^package .*\n`)
+	src = re.ReplaceAllString(src, "")
+
+	// Replace multiple consecutive newline characters with a single newline character
+	re = regexp.MustCompile(`\n{3,}`)
+	src = re.ReplaceAllString(src, "\n")
+
+	src = strings.TrimSpace(src)
+	src += "\n\n"
+
+	if src == "\n\n" {
+		src = ""
 	}
 
-	var buf bytes.Buffer
-	for _, decl := range file.Decls {
-		switch decl := decl.(type) {
-		case *ast.GenDecl:
-			if decl.Tok == token.IMPORT {
-				continue
-			}
-		case *ast.FuncDecl:
-			if decl.Name.Name == "init" {
-				continue
-			}
-		}
-		printer.Fprint(&buf, fset, decl)
-		buf.WriteString("\n\n") // Add an additional newline character
-	}
-
-	return buf.String(), nil
+	return src, nil
 }
 
 func getConsts(src string) (string, error) {
-	fset := token.NewFileSet()
-	file, err := parser.ParseFile(fset, "", src, 0)
+	file, err := decorator.Parse(src)
 	if err != nil {
 		return "", err
 	}
@@ -233,62 +228,66 @@ func getConsts(src string) (string, error) {
 	var buf bytes.Buffer
 	for _, decl := range file.Decls {
 		switch decl := decl.(type) {
-		case *ast.GenDecl:
+		case *dst.GenDecl:
 			if decl.Tok == token.CONST {
-				printer.Fprint(&buf, fset, decl)
+				decorator.Fprint(&buf, file)
 				buf.WriteString("\n\n") // Add an additional newline character
 			}
 		}
 	}
 
-	return buf.String(), nil
+	return cleanCode(buf.String())
 }
 
 func getBenchmarkCode(src, name string) (string, error) {
-	fset := token.NewFileSet()
-	file, err := parser.ParseFile(fset, "", "package main\n"+src, parser.ParseComments)
+	src, _ = cleanCode(src)
+	src = "package dummy\n\n" + src
+	file, err := decorator.Parse(src)
 	if err != nil {
 		return "", err
 	}
 
+	if file == nil {
+		return "", fmt.Errorf("parsed file is nil")
+	}
+
 	var buf bytes.Buffer
-	ast.Inspect(file, func(n ast.Node) bool {
+	newFile := &dst.File{}
+	dst.Inspect(file, func(n dst.Node) bool {
 		switch decl := n.(type) {
-		case *ast.GenDecl:
+		case *dst.GenDecl:
 			if decl.Tok == token.TYPE {
 				for _, spec := range decl.Specs {
-					typeSpec, ok := spec.(*ast.TypeSpec)
+					typeSpec, ok := spec.(*dst.TypeSpec)
 					if ok && typeSpec.Name.Name == name {
-						printer.Fprint(&buf, fset, decl)
-						buf.WriteString("\n\n")
+						newFile.Decls = append(newFile.Decls, decl)
 					}
 				}
 			}
-		case *ast.FuncDecl:
+		case *dst.FuncDecl:
 			if decl.Recv != nil && len(decl.Recv.List) > 0 {
 				var recvTypeName string
 
 				switch expr := decl.Recv.List[0].Type.(type) {
-				case *ast.StarExpr:
-					recvTypeName = expr.X.(*ast.Ident).Name
-				case *ast.Ident:
+				case *dst.StarExpr:
+					if expr.X != nil {
+						recvTypeName = expr.X.(*dst.Ident).Name
+					}
+				case *dst.Ident:
 					recvTypeName = expr.Name
 				}
 
 				if recvTypeName == name {
-					printer.Fprint(&buf, fset, decl)
-					buf.WriteString("\n\n")
+					newFile.Decls = append(newFile.Decls, decl)
 				}
 			} else if strings.HasPrefix(decl.Name.Name, "Benchmark"+name+"_") {
-				printer.Fprint(&buf, fset, decl)
-				buf.WriteString("\n\n")
+				newFile.Decls = append(newFile.Decls, decl)
 			}
-		case *ast.Comment, *ast.CommentGroup:
-			logger.New(true).Debug("comment", "comment")
-
 		}
 		return true
 	})
 
-	return buf.String(), nil
+	newFile.Name = dst.NewIdent("dummy")
+	decorator.Fprint(&buf, newFile)
+	return cleanCode(buf.String())
 }

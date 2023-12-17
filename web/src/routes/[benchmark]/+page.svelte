@@ -22,7 +22,7 @@
     });
 
     const benchmarkSlug = $page.params.benchmark;
-    const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name.toLowerCase() === benchmarkSlug.toLowerCase())[0];
+    const benchmarkGroup = getBenchmarkGroups().filter(group => group.Name.toLowerCase().replaceAll(" ", "-") === benchmarkSlug)[0];
 
     if (!benchmarkGroup) {
         throw new Error(`Benchmark Group ${benchmarkSlug} not found`);

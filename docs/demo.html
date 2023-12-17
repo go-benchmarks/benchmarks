@@ -5,29 +5,93 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="./_app/immutable/assets/0.8a39da3c.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/6.2f30cb5d.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.00559ed4.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.da40593c.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.c584c590.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.25dba82a.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.32a0878f.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.b3167100.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.d9efb7ba.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.a06be24a.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.d2d7a59a.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/store.95412842.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/6.5a2749ef.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/model.a8554bed.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.3bfff5bc.js">
+		<link href="./_app/immutable/assets/0.6d75f775.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/6.4bc083bf.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.a48988ac.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.5f1a9db4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.6081c544.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.69b5bbb5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.7fbfc892.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.fe361084.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.2cd89749.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.16c11139.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.3dd3e72b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/store.b565e301.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/6.a5ce1805.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/model.ae041b77.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.3a4aa361.js"><!-- HEAD_svelte-13buwn8_START --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" data-svelte-h="svelte-17pkiyc"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js" data-svelte-h="svelte-3hvm8e"></script><!-- HEAD_svelte-13buwn8_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">  <nav class="navbar bg-base-100"><div class="navbar-start" data-svelte-h="svelte-ic2hr6"><div tabindex="0" role="button" class="btn btn-ghost btn-circle"><img alt="Go Benchmarks Logo" width="48" src="/favicon.png"></div> <a class="btn btn-ghost text-xl" href="/">Go Benchmarks</a></div> <div class="navbar-center" data-svelte-h="svelte-1aqhixz"></div> <div class="navbar-end"><label class="swap swap-flip text-3xl"><input id="theme-selector-ckb" type="checkbox"> <div data-set-theme="dark" class="swap-on" data-svelte-h="svelte-27oiw6">🌞</div> <div data-set-theme="light" class="swap-off" data-svelte-h="svelte-gxmo3s">🌚</div></label> <a href="https://github.com/go-benchmarks/benchmarks" class="contrast" aria-label="Go Benchmarks GitHub repository" data-svelte-h="svelte-1aibe8f"><svg class="icon svelte-12l45bv" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="32px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></div> </nav> <main class="min-h-screen svelte-eidddc"><hgroup><h1>Go counter Benchmark</h1> <p><a href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/counter">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/counter</a></p></hgroup> <br> <div><hgroup><h2 data-svelte-h="svelte-1y6dpqn">Comparison</h2> <p>This site compares the performance of <code>demo</code> implementations with the
-            functions: <!-- HTML_TAG_START --> and <code>RUN</code><!-- HTML_TAG_END --></p></hgroup> <h3 data-svelte-h="svelte-qhi9an">Different Run Count</h3> <canvas height="50"></canvas> <h3 data-svelte-h="svelte-y0r3q5">Different CPU Core Count</h3> <canvas height="50"></canvas> <hgroup data-svelte-h="svelte-7qxmth"><h3>Different Run Count</h3> <p>Some algorithms get slower or faster over time. Especially when they populate the same data struct.</p></hgroup> <h4>RUN</h4> <canvas height="50"></canvas> <hgroup data-svelte-h="svelte-p37agy"><h3>Different CPU Core Count</h3> <p>Some algorithms are influenced by the amount of cores a CPU has.</p></hgroup> <h4>RUN</h4> <canvas height="50"></canvas> <h2 data-svelte-h="svelte-dckr4b">Implementations</h2> <aside class="svelte-dhnzst"><nav><ul><li><a href="#faster-over-time">Faster Over Time</a></li><li><a href="#faster-with-more-c-p-u-cores">Faster With More C P U Cores</a></li><li><a href="#slower-over-time">Slower Over Time</a></li></ul></nav></aside> <section id="faster-over-time"><h3 class="underline"><a href="#faster-over-time">Faster Over Time</a></h3> <h4>RUN</h4> <h5 data-svelte-h="svelte-kzpjcb">By Run Count</h5> <canvas height="50"></canvas> <h5 data-svelte-h="svelte-ko0gix">By CPU Core Count</h5> <canvas height="50"></canvas> </section><section id="faster-with-more-c-p-u-cores"><h3 class="underline"><a href="#faster-with-more-c-p-u-cores">Faster With More C P U Cores</a></h3> <h4>RUN</h4> <h5 data-svelte-h="svelte-kzpjcb">By Run Count</h5> <canvas height="50"></canvas> <h5 data-svelte-h="svelte-ko0gix">By CPU Core Count</h5> <canvas height="50"></canvas> </section><section id="slower-over-time"><h3 class="underline"><a href="#slower-over-time">Slower Over Time</a></h3> <h4>RUN</h4> <h5 data-svelte-h="svelte-kzpjcb">By Run Count</h5> <canvas height="50"></canvas> <h5 data-svelte-h="svelte-ko0gix">By CPU Core Count</h5> <canvas height="50"></canvas> </section> </div></main> <footer class="footer footer-center p-4 mt-16 bg-base-200 dark:bg-base-200 text-base-content rounded gap-3" data-svelte-h="svelte-ly95ib"><div class="grid grid-flow-col gap-4"><a href="https://marvinjwendt.com" class="link link-hover">Contact</a> <a href="https://marvinjwendt.com/donate" class="link link-hover">Donate</a> <a href="https://github.com/go-benchmarks" class="link link-hover">GitHub</a></div> <div><p>Copyright © 2023 by <a href="https://twitter.com/MarvinJWendt">Marvin Wendt</a></p></div> <div class="grid grid-flow-col gap-4"><a href="/tos" class="link link-hover">Terms of Service</a> <a href="/privacy" class="link link-hover">Privacy Policy</a></div></footer> 
+		<div style="display: contents">  <nav class="navbar bg-base-100"><div class="navbar-start" data-svelte-h="svelte-ic2hr6"><div tabindex="0" role="button" class="btn btn-ghost btn-circle"><img alt="Go Benchmarks Logo" width="48" src="/favicon.png"></div> <a class="btn btn-ghost text-xl" href="/">Go Benchmarks</a></div> <div class="navbar-center" data-svelte-h="svelte-1aqhixz"></div> <div class="navbar-end"><label class="swap swap-flip text-3xl"><input id="theme-selector-ckb" type="checkbox"> <div data-set-theme="dark" class="swap-on" data-svelte-h="svelte-27oiw6">🌞</div> <div data-set-theme="light" class="swap-off" data-svelte-h="svelte-gxmo3s">🌚</div></label> <a href="https://github.com/go-benchmarks/benchmarks" class="contrast" aria-label="Go Benchmarks GitHub repository" data-svelte-h="svelte-1aibe8f"><svg class="icon svelte-12l45bv" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="32px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></div> </nav> <main class="min-h-screen svelte-eidddc"><hgroup><h1>Go Counter Benchmark</h1> <p><a target="_blank" class="link text-blue-400" href="//github.com/go-benchmarks/benchmarks/tree/main/benchmarks/counter">github.com/go-benchmarks/benchmarks/tree/main/benchmarks/counter</a></p></hgroup> <br>  <div><b data-svelte-h="svelte-m97jtc">Description:</b> <p class="description svelte-8jjkd2">This demo benchmark is customized to display all the functions of go-benchmarks.  The results can be used to validate if the charts match the raw benchmark data.  It can also be used to see what go-benchmarks can do.</p> <hgroup><h2 data-svelte-h="svelte-1y6dpqn">Comparison</h2> <p>This site compares the performance of <code>Demo</code> implementations with the
+            functions: <!-- HTML_TAG_START --><code>RUN</code><!-- HTML_TAG_END --></p></hgroup> <h3 data-svelte-h="svelte-qhi9an">Different Run Count</h3> <canvas height="50"></canvas> <h3 data-svelte-h="svelte-y0r3q5">Different CPU Core Count</h3> <canvas height="50"></canvas> <hgroup data-svelte-h="svelte-7qxmth"><h3>Different Run Count</h3> <p>Some algorithms get slower or faster over time. Especially when they populate the same data struct.</p></hgroup> <h4>RUN</h4> <canvas height="50"></canvas> <hgroup data-svelte-h="svelte-p37agy"><h3>Different CPU Core Count</h3> <p>Some algorithms are influenced by the amount of cores a CPU has.</p></hgroup> <h4>RUN</h4> <canvas height="50"></canvas> <h2 class="mt-64" data-svelte-h="svelte-1ap7n5u">Implementations</h2> <nav class="mb-32"><ul><li><a class="link-hover text-blue-400 text-xl" href="#faster-over-time">Faster Over Time</a></li><li><a class="link-hover text-blue-400 text-xl" href="#faster-with-more-cpu-cores">Faster With More CPU Cores</a></li><li><a class="link-hover text-blue-400 text-xl" href="#slower-over-time">Slower Over Time</a></li></ul></nav> <section id="faster-over-time"><h3 class="underline"><a href="#faster-over-time">Faster Over Time</a></h3> <p class="description svelte-8jjkd2">This benchmark gets faster, the more runs it has.</p> <b data-svelte-h="svelte-ycrh9t">Code:</b> <pre><code class="language-go">func BenchmarkFasterOverTime_run(b *testing.B) {
+	const maxDelay = 1000 // Maximum delay in nanoseconds
+	for i := 0; i &lt; b.N; i++ {
+		// Calculate the sleep duration, ensuring it's never less than 0
+		delay := maxDelay - i
+		if delay &lt; 0 {
+			delay = 0
+		}
+		time.Sleep(time.Duration(delay) * time.Nanosecond)
+	}
+}</code></pre> <h4>RUN</h4> <h5 data-svelte-h="svelte-kzpjcb">By Run Count</h5> <canvas height="50"></canvas> <h5 data-svelte-h="svelte-ko0gix">By CPU Core Count</h5> <canvas height="50"></canvas> </section><section id="faster-with-more-cpu-cores"><h3 class="underline"><a href="#faster-with-more-cpu-cores">Faster With More CPU Cores</a></h3> <p class="description svelte-8jjkd2">This benchmark gets faster, the more CPU cores it has.</p> <b data-svelte-h="svelte-ycrh9t">Code:</b> <pre><code class="language-go">func BenchmarkFasterWithMoreCPUCores_run(b *testing.B) {
+	done := make(chan bool)
+
+	for i := 0; i &lt; b.N; i++ {
+		go func() {
+			// Increase the workload inside the goroutine
+			time.Sleep(10000000 * time.Nanosecond)
+
+			done &lt;- true
+		}()
+	}
+
+	// Wait for all goroutines to finish
+	for i := 0; i &lt; b.N; i++ {
+		&lt;-done
+	}
+}</code></pre> <h4>RUN</h4> <h5 data-svelte-h="svelte-kzpjcb">By Run Count</h5> <canvas height="50"></canvas> <h5 data-svelte-h="svelte-ko0gix">By CPU Core Count</h5> <canvas height="50"></canvas> </section><section id="slower-over-time"><h3 class="underline"><a href="#slower-over-time">Slower Over Time</a></h3> <p class="description svelte-8jjkd2">This benchmark gets slower, the more runs it has.</p> <b data-svelte-h="svelte-ycrh9t">Code:</b> <pre><code class="language-go">func BenchmarkSlowerOverTime_run(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		time.Sleep(time.Duration(i/50) * time.Nanosecond)
+	}
+}</code></pre> <h4>RUN</h4> <h5 data-svelte-h="svelte-kzpjcb">By Run Count</h5> <canvas height="50"></canvas> <h5 data-svelte-h="svelte-ko0gix">By CPU Core Count</h5> <canvas height="50"></canvas> </section> <h2 data-svelte-h="svelte-1o6llrz">Full Benchmark Code</h2> <pre><code class="language-go">func BenchmarkSlowerOverTime_run(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		time.Sleep(time.Duration(i/50) * time.Nanosecond)
+	}
+}
+
+func BenchmarkFasterOverTime_run(b *testing.B) {
+	const maxDelay = 1000 // Maximum delay in nanoseconds
+	for i := 0; i &lt; b.N; i++ {
+		// Calculate the sleep duration, ensuring it's never less than 0
+		delay := maxDelay - i
+		if delay &lt; 0 {
+			delay = 0
+		}
+		time.Sleep(time.Duration(delay) * time.Nanosecond)
+	}
+}
+
+func BenchmarkFasterWithMoreCPUCores_run(b *testing.B) {
+	done := make(chan bool)
+
+	for i := 0; i &lt; b.N; i++ {
+		go func() {
+			// Increase the workload inside the goroutine
+			time.Sleep(10000000 * time.Nanosecond)
+
+			done &lt;- true
+		}()
+	}
+
+	// Wait for all goroutines to finish
+	for i := 0; i &lt; b.N; i++ {
+		&lt;-done
+	}
+}</code></pre> </div></main> <footer class="footer footer-center p-4 mt-16 bg-base-200 dark:bg-base-200 text-base-content rounded gap-3" data-svelte-h="svelte-ly95ib"><div class="grid grid-flow-col gap-4"><a href="https://marvinjwendt.com" class="link link-hover">Contact</a> <a href="https://marvinjwendt.com/donate" class="link link-hover">Donate</a> <a href="https://github.com/go-benchmarks" class="link link-hover">GitHub</a></div> <div><p>Copyright © 2023 by <a href="https://twitter.com/MarvinJWendt">Marvin Wendt</a></p></div> <div class="grid grid-flow-col gap-4"><a href="/tos" class="link link-hover">Terms of Service</a> <a href="/privacy" class="link link-hover">Privacy Policy</a></div></footer> 
 			
 			<script>
 				{
-					__sveltekit_iqfd3y = {
+					__sveltekit_kb3ed5 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -37,8 +101,8 @@
 					const data = [null,null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.00559ed4.js"),
-						import("./_app/immutable/entry/app.b3167100.js")
+						import("./_app/immutable/entry/start.a48988ac.js"),
+						import("./_app/immutable/entry/app.fe361084.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2, 6],
