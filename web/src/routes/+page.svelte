@@ -16,7 +16,7 @@
     </hgroup>
 </section>
 <section>
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid px-8 sm:px-0 lg:grid-cols-3 gap-8">
         {#each benchmarkGroups as group}
             <a href="/{group.Name.toLowerCase().replaceAll(' ', '-')}"
                class="card card-compact bg-base-200 bg-opacity-30 border-1 border-black card-bordered shadow-md">
