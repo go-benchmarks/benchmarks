@@ -11,6 +11,9 @@ dependencies:
   chart.js:
     specifier: ^4.4.1
     version: 4.4.1
+  chartjs-plugin-annotation:
+    specifier: ^3.0.1
+    version: 3.0.1(chart.js@4.4.1)
   chartjs-plugin-zoom:
     specifier: ^2.0.1
     version: 2.0.1(chart.js@4.4.1)
@@ -554,6 +557,14 @@ packages:
     engines: {pnpm: '>=7'}
     dependencies:
       '@kurkle/color': 0.3.2
+    dev: false
+
+  /chartjs-plugin-annotation@3.0.1(chart.js@4.4.1):
+    resolution: {integrity: sha512-hlIrXXKqSDgb+ZjVYHefmlZUXK8KbkCPiynSVrTb/HjTMkT62cOInaT1NTQCKtxKKOm9oHp958DY3RTAFKtkHg==}
+    peerDependencies:
+      chart.js: '>=4.0.0'
+    dependencies:
+      chart.js: 4.4.1
     dev: false
 
   /chartjs-plugin-zoom@2.0.1(chart.js@4.4.1):

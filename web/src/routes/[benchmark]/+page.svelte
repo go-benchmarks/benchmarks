@@ -2,21 +2,23 @@
     import {page} from '$app/stores';
     import {
         type Benchmark,
-        filterBenchmarkByVariationName,
-        getBarChartDataByCPUCountMulti,
-        getBarChartDataByRunsMulti,
         getBarChartDataByVariation,
         getBarChartDataByVariationAndRunCount,
         getBenchmarkGroups,
-        getChartDataByCPUCount,
-        getChartDataByRuns,
         getLineChartOptions,
     } from "$lib/model";
-    import {Bar, Line} from "svelte-chartjs";
-    import "chart.js/auto";
     import {onMount} from "svelte";
     import hljs from "highlight.js/lib/core";
     import * as goLang from "highlight.js/lib/languages/go";
+    import {Bar} from "svelte-chartjs";
+    import {Chart as ChartJS} from 'chart.js';
+    import "chart.js/auto"
+    import annotationPlugin from 'chartjs-plugin-annotation';
+    import Comparison from "$lib/components/Comparison.svelte";
+    import ImplementationsToC from "$lib/components/ImplementationsToC.svelte";
+    import ImplementationAnalysis from "$lib/components/ImplementationAnalysis.svelte";
+
+    ChartJS.register(annotationPlugin)
 
     onMount(() => {
         hljs.registerLanguage('go', goLang.default);
@@ -31,16 +33,7 @@
     }
 
     let benchmarks: Benchmark[] = benchmarkGroup.Benchmarks;
-
     const uniqueVariationNames = benchmarks.flatMap(b => b.Variations).map(v => v.Name).filter((v, i, a) => a.indexOf(v) === i);
-
-
-    let uniqueVariationNamesString: string;
-    if (uniqueVariationNames.length === 1) {
-        uniqueVariationNamesString = `<code>${uniqueVariationNames[0]}</code>`;
-    } else {
-        uniqueVariationNamesString = uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(0, -1).join(", ") + " and " + uniqueVariationNames.map(vn => `<code>${vn}</code>`).slice(-1);
-    }
 </script>
 
 <svelte:head>
@@ -59,21 +52,15 @@
                 {@html benchmarkGroup.Headline}
             </p>
         </hgroup>
-        <br/>
+
         <b>Description:</b>
         <p class="small-width">{@html benchmarkGroup.Description}</p>
+
+        <ImplementationsToC {benchmarkGroup} />
     </section>
 
     <section>
-        <hgroup>
-            <h2>Comparison</h2>
-            <p>This site compares the performance of <code>{benchmarkGroup.Name}</code> implementations with the
-                functions: {@html uniqueVariationNamesString}</p>
-        </hgroup>
-        <h3>Different Run Count</h3>
-        <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByRunsMulti(benchmarks)}"/>
-        <h3>Different CPU Core Count</h3>
-        <Bar height="{50}" options="{getLineChartOptions(true)}" data="{getBarChartDataByCPUCountMulti(benchmarks)}"/>
+        <Comparison {benchmarkGroup}/>
     </section>
 
     {#if uniqueVariationNames.length > 1}
@@ -85,7 +72,7 @@
             </hgroup>
             {#each uniqueVariationNames as vari}
                 <h4><code>{vari}</code></h4>
-                <Bar height="{50}" options="{getLineChartOptions(true)}"
+                <Bar height="{50}" options="{getLineChartOptions(true, false)}"
                      data="{getBarChartDataByVariationAndRunCount(benchmarks, vari)}"/>
             {/each}
         </section>
@@ -97,62 +84,16 @@
             </hgroup>
             {#each uniqueVariationNames as vari}
                 <h4><code>{vari}</code></h4>
-                <Bar height="{50}" options="{getLineChartOptions(true)}"
+                <Bar height="{50}" options="{getLineChartOptions(true, false)}"
                      data="{getBarChartDataByVariation(benchmarks, vari)}"/>
             {/each}
         </section>
     {/if}
 
 
-    <section>
-        <h2 class="mt-64">Implementations</h2>
-        <nav class="mb-32">
-            <ul>
-                {#each benchmarks as benchmark}
-                    <li><a class="link-hover text-blue-400 text-xl"
-                           href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a></li>
-                {/each}
-            </ul>
-        </nav>
-    </section>
-
     {#each benchmarks as benchmark}
         <section id="{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">
-            <section>
-                <h3 class="underline"><a
-                        href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a>
-                </h3>
-                <p class="small-width">{@html benchmark.Description}</p>
-                {#if benchmark.Code}
-                    <pre class="code-area"><code
-                            class="language-go">{benchmarkGroup.Constants}{benchmark.Code}</code></pre>
-                    <div tabindex="0" class="collapse collapse-plus bg-[#282c34]">
-                        <input type="checkbox" />
-                        <div class="collapse-title text-xl font-medium">
-                            Benchmark Code
-                        </div>
-                        <div class="collapse-content">
-                            <pre class="code-area"><code
-                                    class="language-go">{benchmarkGroup.Constants}{benchmark.BenchmarkCode}</code></pre>
-                        </div>
-                    </div>
-                {:else}
-                <pre class="code-area"><code
-                        class="language-go">{benchmarkGroup.Constants}{benchmark.BenchmarkCode}</code></pre>
-                {/if}
-            </section>
-
-            {#each uniqueVariationNames as vari}
-                <section>
-                    <h4>{benchmark.Name} <code>{vari}</code></h4>
-                    <h5>By Run Count</h5>
-                    <Line height="{50}" options="{getLineChartOptions(false)}"
-                          data="{getChartDataByRuns(filterBenchmarkByVariationName(benchmark, vari))}"/>
-                    <h5>By CPU Core Count</h5>
-                    <Line height="{50}" options="{getLineChartOptions(false)}"
-                          data="{getChartDataByCPUCount(filterBenchmarkByVariationName(benchmark, vari))}"/>
-                </section>
-            {/each}
+            <ImplementationAnalysis {benchmarkGroup} {benchmark} />
         </section>
     {/each}
 
@@ -160,13 +101,47 @@
         <h2>Full Benchmark Code</h2>
         <pre><code class="language-go">{benchmarkGroup.Code}</code></pre>
     </section>
+
+    <section>
+        <h2>Full Benchmark Output</h2>
+        <div class="overflow-x-auto max-h-96">
+            <table class="table table-xs">
+                <thead>
+                <tr>
+                    <th>Implementation</th>
+                    <th>Function</th>
+                    <th>Runs</th>
+                    <th>CPU Core Count</th>
+                    <th>ns/op</th>
+                    <th>ops/sec</th>
+                    <th>B/op</th>
+                    <th>allocs/op</th>
+                    <th>MB/s</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#each benchmarks as benchmark}
+                    {#each benchmark.Variations as variation}
+                        <tr>
+                            <td>{benchmark.Name}</td>
+                            <td>{variation.Name}</td>
+                            <td>{variation.N}</td>
+                            <td>{variation.CPUCount}</td>
+                            <td>{variation.NsPerOp}</td>
+                            <td>{variation.OpsPerSec}</td>
+                            <td>{variation.AllocedBytesPerOp}</td>
+                            <td>{variation.AllocsPerOp}</td>
+                            <td>{variation.MBPerS}</td>
+                        </tr>
+                    {/each}
+                {/each}
+                </tbody>
+            </table>
+        </div>
+    </section>
 </div>
 
 <style lang="scss">
-  hgroup > p {
-    @apply text-gray-400;
-  }
-
   .code-area {
     @apply my-6
   }

@@ -31,3 +31,7 @@ h5 {
 code {
   @apply bg-gray-800 rounded px-2 mx-0.5 py-0.5;
 }
+
+hgroup > p {
+  @apply text-gray-400 mb-8;
+}

@@ -180,10 +180,17 @@ export function convertBenchmarksToRunCountPerformanceLineChart(benchmarks: Benc
     };
 }
 
-export function getLineChartOptions(isLogarithmic: boolean) {
+export function getLineChartOptions(isLogarithmic: boolean, multipleToolips: boolean) {
     return {
         responsive: true,
+        interaction: {
+            mode: multipleToolips ? 'index' : 'nearest',
+        },
         plugins: {
+            annotation: {
+                annotations: {
+                }
+            },
             tooltip: {
                 callbacks: {
                     label: function (context: any) {

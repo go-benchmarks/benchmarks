@@ -2,8 +2,7 @@ name: Concurrent Map Access
 headline: A benchmark to compare the performance of different concurrent map access implementations in Go.
 description: >
     The classic map access is done by using the `map[key]` syntax.
-    This implementation works fine in the most cases, but it has some drawbacks.
-    One of them is that it is not very fast.
+    This implementation works fine in the most cases, but it is not thread-safe.
     A solution is to use the `sync.Map` type or to add a mutex to the map.
     This benchmark shows which implementation is the fastest.
 
