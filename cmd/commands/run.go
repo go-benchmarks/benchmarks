@@ -18,6 +18,7 @@ var runCmd = &cobra.Command{
 	Short: "Run benchmarks and save results",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		debug, _ := cmd.Flags().GetBool("debug")
+		all, _ := cmd.Flags().GetBool("all")
 		logger := logger.New(debug)
 
 		logger.Info("running benchmarks")
@@ -30,16 +31,21 @@ var runCmd = &cobra.Command{
 
 		// Walk through the benchmarks directory
 		err := utils.WalkOverBenchmarks(basePath, func(path string) error {
-			return runBenchmark(logger, path)
+			return runBenchmark(logger, path, !all)
 		})
 
 		return err
 	},
 }
 
-func runBenchmark(logger *slog.Logger, path string) error {
+func runBenchmark(logger *slog.Logger, path string, skipExisting bool) error {
 	outputFilePath := filepath.Join(path, "output.bench")
 	logger.Debug("running benchmark", "path", path)
+
+	if _, err := os.Stat(outputFilePath); err == nil && skipExisting {
+		logger.Debug("benchmark output already exists, skipping", "path", path)
+		return nil
+	}
 
 	maxCPU := runtime.NumCPU()
 	logger.Debug("max cpu", "maxCPU", maxCPU)
@@ -74,6 +80,7 @@ func runBenchmark(logger *slog.Logger, path string) error {
 
 func init() {
 	runCmd.Flags().StringP("benchmarks", "b", "./benchmarks", "Filepath of the \"benchmarks\" directory")
+	runCmd.Flags().BoolP("all", "a", false, "Run all benchmarks, even if the output file already exists")
 
 	rootCmd.AddCommand(runCmd)
 }

@@ -2,179 +2,179 @@ goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    1000	       889.4 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    1000	       987.3 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    1000	       996.5 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    1000	      1300 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    1000	      1451 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    1000	      1314 ns/op	     181 B/op	       2 allocs/op
-BenchmarkSync_run        	    1000	      1218 ns/op	     237 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    1000	      1650 ns/op	     235 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    1000	      1644 ns/op	     237 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    1000	      1960 ns/op	     235 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    1000	      1743 ns/op	     235 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    1000	      1829 ns/op	     237 B/op	       6 allocs/op
+BenchmarkMutex_run       	    1000	       889.4 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    1000	       876.5 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    1000	      1521 ns/op	     182 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    1000	      1257 ns/op	     180 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    1000	      1318 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    1000	      1908 ns/op	     181 B/op	       2 allocs/op
+BenchmarkSync_run        	    1000	      1211 ns/op	     236 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    1000	      1666 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    1000	      1807 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    1000	      2063 ns/op	     236 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    1000	      1913 ns/op	     236 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    1000	      2435 ns/op	     234 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.035s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.037s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    2000	       832.9 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    2000	      1160 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    2000	      1189 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    2000	      1289 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    2000	      1265 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    2000	      1362 ns/op	     180 B/op	       2 allocs/op
-BenchmarkSync_run        	    2000	      1256 ns/op	     237 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    2000	      1685 ns/op	     237 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    2000	      1949 ns/op	     237 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    2000	      2048 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    2000	      1902 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    2000	      2573 ns/op	     237 B/op	       6 allocs/op
+BenchmarkMutex_run       	    2000	       871.3 ns/op	     180 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    2000	       987.7 ns/op	     180 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    2000	      1436 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    2000	      1462 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    2000	      1447 ns/op	     180 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    2000	      1758 ns/op	     180 B/op	       2 allocs/op
+BenchmarkSync_run        	    2000	      1404 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    2000	      2160 ns/op	     236 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    2000	      2068 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    2000	      1693 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    2000	      1906 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    2000	      2613 ns/op	     238 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.055s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.058s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    3000	       821.9 ns/op	     153 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    3000	       966.9 ns/op	     154 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    3000	      1161 ns/op	     154 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    3000	      1441 ns/op	     153 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    3000	      1466 ns/op	     152 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    3000	      1731 ns/op	     153 B/op	       2 allocs/op
-BenchmarkSync_run        	    3000	      1193 ns/op	     199 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    3000	      1653 ns/op	     201 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    3000	      1917 ns/op	     201 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    3000	      1887 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    3000	      1763 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    3000	      1816 ns/op	     200 B/op	       6 allocs/op
+BenchmarkMutex_run       	    3000	       767.8 ns/op	     153 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    3000	       986.0 ns/op	     154 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    3000	      1210 ns/op	     154 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    3000	      1268 ns/op	     155 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    3000	      1604 ns/op	     154 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    3000	      1879 ns/op	     154 B/op	       2 allocs/op
+BenchmarkSync_run        	    3000	      1114 ns/op	     199 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    3000	      1632 ns/op	     201 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    3000	      1597 ns/op	     201 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    3000	      1776 ns/op	     201 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    3000	      1847 ns/op	     200 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    3000	      1891 ns/op	     200 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.071s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.070s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    4000	       879.4 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    4000	       949.5 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    4000	      1559 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    4000	      1172 ns/op	     181 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    4000	      1332 ns/op	     180 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    4000	      1733 ns/op	     180 B/op	       2 allocs/op
-BenchmarkSync_run        	    4000	      1153 ns/op	     237 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    4000	      1513 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    4000	      1723 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    4000	      1943 ns/op	     239 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    4000	      1693 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    4000	      1991 ns/op	     239 B/op	       6 allocs/op
+BenchmarkMutex_run       	    4000	       816.8 ns/op	     180 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    4000	      1027 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    4000	      1390 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    4000	      1391 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    4000	      1460 ns/op	     181 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    4000	      1317 ns/op	     180 B/op	       2 allocs/op
+BenchmarkSync_run        	    4000	      1118 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    4000	      1684 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    4000	      1802 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    4000	      1740 ns/op	     237 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    4000	      2073 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    4000	      2508 ns/op	     237 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.088s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.091s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    5000	       782.1 ns/op	     163 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    5000	       971.4 ns/op	     164 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    5000	      1287 ns/op	     164 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    5000	      1403 ns/op	     164 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    5000	      1441 ns/op	     164 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    5000	      1505 ns/op	     164 B/op	       2 allocs/op
-BenchmarkSync_run        	    5000	      1118 ns/op	     213 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    5000	      1558 ns/op	     214 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    5000	      1679 ns/op	     214 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    5000	      1775 ns/op	     214 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    5000	      2038 ns/op	     214 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    5000	      2249 ns/op	     215 B/op	       6 allocs/op
+BenchmarkMutex_run       	    5000	       820.5 ns/op	     164 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    5000	      1004 ns/op	     163 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    5000	      1161 ns/op	     163 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    5000	      1335 ns/op	     164 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    5000	      1324 ns/op	     164 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    5000	      1729 ns/op	     164 B/op	       2 allocs/op
+BenchmarkSync_run        	    5000	      1168 ns/op	     213 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    5000	      1763 ns/op	     214 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    5000	      1787 ns/op	     214 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    5000	      1846 ns/op	     215 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    5000	      2058 ns/op	     214 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    5000	      2204 ns/op	     214 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.107s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.110s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    6000	       766.9 ns/op	     153 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    6000	       993.1 ns/op	     153 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    6000	      1215 ns/op	     154 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    6000	      1255 ns/op	     154 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    6000	      1268 ns/op	     153 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    6000	      1744 ns/op	     153 B/op	       2 allocs/op
-BenchmarkSync_run        	    6000	      1132 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    6000	      1564 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    6000	      1631 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    6000	      1865 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    6000	      2066 ns/op	     200 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    6000	      2334 ns/op	     200 B/op	       6 allocs/op
+BenchmarkMutex_run       	    6000	       846.7 ns/op	     153 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    6000	      1073 ns/op	     152 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    6000	      1396 ns/op	     154 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    6000	      1327 ns/op	     153 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    6000	      1544 ns/op	     154 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    6000	      1702 ns/op	     153 B/op	       2 allocs/op
+BenchmarkSync_run        	    6000	      1293 ns/op	     200 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    6000	      1577 ns/op	     200 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    6000	      1979 ns/op	     201 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    6000	      1848 ns/op	     201 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    6000	      1932 ns/op	     200 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    6000	      1963 ns/op	     200 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.124s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.128s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    7000	       783.9 ns/op	     191 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    7000	      1007 ns/op	     191 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    7000	      1232 ns/op	     191 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    7000	      1274 ns/op	     191 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    7000	      1472 ns/op	     191 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    7000	      1633 ns/op	     191 B/op	       2 allocs/op
-BenchmarkSync_run        	    7000	      1243 ns/op	     256 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    7000	      1376 ns/op	     255 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    7000	      1775 ns/op	     256 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    7000	      1789 ns/op	     255 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    7000	      1935 ns/op	     255 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    7000	      2087 ns/op	     255 B/op	       6 allocs/op
+BenchmarkMutex_run       	    7000	       785.5 ns/op	     191 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    7000	       933.1 ns/op	     191 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    7000	      1230 ns/op	     192 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    7000	      1283 ns/op	     192 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    7000	      1299 ns/op	     191 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    7000	      1453 ns/op	     191 B/op	       2 allocs/op
+BenchmarkSync_run        	    7000	      1218 ns/op	     255 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    7000	      1452 ns/op	     255 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    7000	      1936 ns/op	     255 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    7000	      1886 ns/op	     255 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    7000	      1936 ns/op	     254 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    7000	      2027 ns/op	     255 B/op	       6 allocs/op
 PASS
 ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.140s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    8000	       859.4 ns/op	     179 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    8000	       956.9 ns/op	     179 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    8000	      1168 ns/op	     179 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    8000	      1232 ns/op	     179 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    8000	      1241 ns/op	     179 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    8000	      1626 ns/op	     179 B/op	       2 allocs/op
-BenchmarkSync_run        	    8000	      1191 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    8000	      1557 ns/op	     238 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    8000	      2038 ns/op	     239 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    8000	      2097 ns/op	     239 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    8000	      2055 ns/op	     239 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    8000	      2110 ns/op	     238 B/op	       6 allocs/op
+BenchmarkMutex_run       	    8000	       788.2 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    8000	       911.6 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    8000	      1192 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    8000	      1182 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    8000	      1262 ns/op	     179 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    8000	      1550 ns/op	     180 B/op	       2 allocs/op
+BenchmarkSync_run        	    8000	      1136 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    8000	      1370 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    8000	      1780 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    8000	      1794 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    8000	      1962 ns/op	     238 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    8000	      1920 ns/op	     238 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.163s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.152s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	    9000	       761.2 ns/op	     170 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	    9000	       978.5 ns/op	     170 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	    9000	      1188 ns/op	     170 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	    9000	      1284 ns/op	     170 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	    9000	      1402 ns/op	     170 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	    9000	      1433 ns/op	     170 B/op	       2 allocs/op
-BenchmarkSync_run        	    9000	      1166 ns/op	     224 B/op	       6 allocs/op
-BenchmarkSync_run-2      	    9000	      1434 ns/op	     225 B/op	       6 allocs/op
-BenchmarkSync_run-4      	    9000	      1750 ns/op	     225 B/op	       6 allocs/op
-BenchmarkSync_run-8      	    9000	      1746 ns/op	     225 B/op	       6 allocs/op
-BenchmarkSync_run-16     	    9000	      2004 ns/op	     224 B/op	       6 allocs/op
-BenchmarkSync_run-32     	    9000	      2009 ns/op	     225 B/op	       6 allocs/op
+BenchmarkMutex_run       	    9000	       773.6 ns/op	     170 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	    9000	       909.2 ns/op	     170 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	    9000	      1099 ns/op	     170 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	    9000	      1170 ns/op	     170 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	    9000	      1151 ns/op	     170 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	    9000	      1520 ns/op	     171 B/op	       2 allocs/op
+BenchmarkSync_run        	    9000	      1248 ns/op	     225 B/op	       6 allocs/op
+BenchmarkSync_run-2      	    9000	      1406 ns/op	     226 B/op	       6 allocs/op
+BenchmarkSync_run-4      	    9000	      1863 ns/op	     225 B/op	       6 allocs/op
+BenchmarkSync_run-8      	    9000	      1866 ns/op	     225 B/op	       6 allocs/op
+BenchmarkSync_run-16     	    9000	      2088 ns/op	     225 B/op	       6 allocs/op
+BenchmarkSync_run-32     	    9000	      2056 ns/op	     225 B/op	       6 allocs/op
 PASS
 ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.172s
 goos: linux
 goarch: amd64
 pkg: github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access
 cpu: AMD Ryzen 9 3950X 16-Core Processor            
-BenchmarkMutex_run       	   10000	       772.9 ns/op	     163 B/op	       2 allocs/op
-BenchmarkMutex_run-2     	   10000	       878.9 ns/op	     163 B/op	       2 allocs/op
-BenchmarkMutex_run-4     	   10000	      1184 ns/op	     163 B/op	       2 allocs/op
-BenchmarkMutex_run-8     	   10000	      1214 ns/op	     163 B/op	       2 allocs/op
-BenchmarkMutex_run-16    	   10000	      1366 ns/op	     162 B/op	       2 allocs/op
-BenchmarkMutex_run-32    	   10000	      1523 ns/op	     162 B/op	       2 allocs/op
-BenchmarkSync_run        	   10000	      1176 ns/op	     214 B/op	       6 allocs/op
-BenchmarkSync_run-2      	   10000	      1457 ns/op	     215 B/op	       6 allocs/op
-BenchmarkSync_run-4      	   10000	      1795 ns/op	     215 B/op	       6 allocs/op
-BenchmarkSync_run-8      	   10000	      1939 ns/op	     215 B/op	       6 allocs/op
-BenchmarkSync_run-16     	   10000	      1833 ns/op	     214 B/op	       6 allocs/op
-BenchmarkSync_run-32     	   10000	      2200 ns/op	     214 B/op	       6 allocs/op
+BenchmarkMutex_run       	   10000	       792.6 ns/op	     163 B/op	       2 allocs/op
+BenchmarkMutex_run-2     	   10000	      1032 ns/op	     162 B/op	       2 allocs/op
+BenchmarkMutex_run-4     	   10000	      1147 ns/op	     163 B/op	       2 allocs/op
+BenchmarkMutex_run-8     	   10000	      1217 ns/op	     163 B/op	       2 allocs/op
+BenchmarkMutex_run-16    	   10000	      1285 ns/op	     162 B/op	       2 allocs/op
+BenchmarkMutex_run-32    	   10000	      1564 ns/op	     163 B/op	       2 allocs/op
+BenchmarkSync_run        	   10000	      1110 ns/op	     214 B/op	       6 allocs/op
+BenchmarkSync_run-2      	   10000	      1369 ns/op	     215 B/op	       6 allocs/op
+BenchmarkSync_run-4      	   10000	      1836 ns/op	     215 B/op	       6 allocs/op
+BenchmarkSync_run-8      	   10000	      1792 ns/op	     214 B/op	       6 allocs/op
+BenchmarkSync_run-16     	   10000	      1918 ns/op	     214 B/op	       6 allocs/op
+BenchmarkSync_run-32     	   10000	      1977 ns/op	     215 B/op	       6 allocs/op
 PASS
-ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.191s
+ok  	github.com/go-benchmarks/benchmarks/benchmarks/concurrent-map-access	0.190s

@@ -1,0 +1,25 @@
+name: Synchronization Methods
+headline: A benchmark to compare the performance of channel and mutex synchronization in Go.
+description: >
+    This benchmark compares the performance of channel and mutex synchronization in Go.
+
+tags:
+  - sync
+  - channel
+  - mutex
+  - synchronization
+  - concurrency
+
+contributors:
+  - MarvinJWendt
+
+meta:
+  - implementation: Channel
+    description: >
+        This benchmark uses a channel to synchronize the goroutines.
+        The channel is used as a lock, so only one goroutine can access the counter at the same time.
+
+  - implementation: Mutex
+    description: >
+        This benchmark uses a `sync.Mutex` to lock the counter, before accessing it.
+        This makes sure, that only one goroutine can access the counter at the same time.
