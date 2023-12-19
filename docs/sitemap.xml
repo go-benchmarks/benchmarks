@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="https://www.w3.org/1999/xhtml"
+>
+
+	<url>
+		<loc>https://go-benchmarks.com/</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>1</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/privacy</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/tos</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/array-vs-slice</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/concurrent-map-access</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/counter</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/demo</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/fmt</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/sorting-algorithms</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/string-concatination</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+
+	<url>
+		<loc>https://go-benchmarks.com/synchronization-methods</loc>
+		<lastmod>2023-12-19T19:11:34.077Z</lastmod>
+
+		<priority>0.5</priority>
+
+	</url>
+</urlset>

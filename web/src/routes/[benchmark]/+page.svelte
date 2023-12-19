@@ -56,7 +56,7 @@
         <b>Description:</b>
         <p class="small-width">{@html benchmarkGroup.Description}</p>
 
-        <ImplementationsToC {benchmarkGroup} />
+        <ImplementationsToC {benchmarkGroup}/>
     </section>
 
     <section>
@@ -93,7 +93,7 @@
 
     {#each benchmarks as benchmark}
         <section id="{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">
-            <ImplementationAnalysis {benchmarkGroup} {benchmark} />
+            <ImplementationAnalysis {benchmarkGroup} {benchmark}/>
         </section>
     {/each}
 
@@ -143,7 +143,7 @@
 
 <style lang="scss">
   .code-area {
-    @apply my-6
+    @apply my-6;
   }
 
   section {
