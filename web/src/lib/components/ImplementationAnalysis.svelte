@@ -5,7 +5,6 @@
     import hljs from "highlight.js/lib/core";
     import * as goLang from "highlight.js/lib/languages/go";
 
-
     export let benchmarkGroup: BenchmarkGroup;
     export let benchmark: Benchmark;
     export let benchmarks = benchmarkGroup.Benchmarks
@@ -55,6 +54,39 @@
     });
 
     const averageBenchmark = averagedBenchmarks.filter(b => b.Benchmark.Name === benchmark.Name)[0];
+    function calculatePercentageDifference(current, other) {
+        if (current <= 0 || other <= 0) return 0; // Avoid division by zero
+        return ((current - other) / other) * 100;
+    }
+
+    const comparisonResults = [];
+
+    uniqueVariationNames.forEach(variationName => {
+        averagedBenchmarks.forEach(b => {
+            if (b.Benchmark.Name !== benchmark.Name) {
+                const currentVariation = averageBenchmark.Variations[variationName];
+                const comparisonVariation = b.Variations[variationName];
+
+                if (currentVariation && comparisonVariation) {
+                    const percentageDifference = calculatePercentageDifference(currentVariation.NsPerOp, comparisonVariation.NsPerOp);
+                    let comparisonStatement;
+
+                    if (percentageDifference > 0) {
+                        // Current is slower
+                        comparisonStatement = `<span class="font-bold">${benchmark.Name}</span> <code>${variationName}</code> is <span class="text-red-500">${percentageDifference.toFixed(2)}% slower</span> than <span class="font-bold">${b.Benchmark.Name}</span> <code>${variationName}</code>.`;
+                    } else {
+                        // Current is faster
+                        comparisonStatement = `<span class="font-bold">${benchmark.Name}</span> <code>${variationName}</code> is <span class="text-green-500">${Math.abs(percentageDifference).toFixed(2)}% faster</span> than <span class="font-bold">${b.Benchmark.Name}</span> <code>${variationName}</code>.`;
+                    }
+
+                    comparisonResults.push(comparisonStatement);
+                }
+            }
+        });
+    });
+
+
+
 </script>
 
 <section>
@@ -62,7 +94,6 @@
             href="#{benchmark.Name.replaceAll(' ', '-').toLowerCase()}">{benchmark.Name}</a>
     </h3>
     <p class="small-width">{@html benchmark.Description}</p>
-    <h4>Averaged Benchmark Results</h4>
     <table class="table">
         <thead>
         <tr>
@@ -87,6 +118,13 @@
         {/each}
         </tbody>
     </table>
+
+    <h4>Comparison</h4>
+    <ul>
+        {#each comparisonResults as comparisonStatement}
+            <li>{@html comparisonStatement}</li>
+        {/each}
+    </ul>
 
     {#if benchmark.Code}
         <pre class="code-area"><code class="language-go">{benchmarkGroup.Constants}{benchmark.Code}</code></pre>
