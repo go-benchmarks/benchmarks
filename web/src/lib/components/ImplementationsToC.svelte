@@ -105,7 +105,7 @@
 
 {#if benchmarksWithVariationSpeeds.length > 1}
     <h2 class="mt-16">Implementations</h2>
-    <blockquote class="prose">Green function names mark the fastest implementation, red mark the slowest</blockquote>
+    <blockquote class="prose">Green marks the fastest implementation, red marks the slowest</blockquote>
     <nav class="mb-32">
         <ul>
             {#each benchmarksWithVariationSpeeds as benchmark}
